@@ -25,8 +25,8 @@ export const projects = [
     ],
     impact:
       'K6 load testing with zero request failures under production-level traffic.',
-    github: 'https://github.com/aubaid/vector-ai',
-    demo: 'https://vector-ai.example.com',
+    github: 'https://github.com/AubaidAhmedSaiyed/VectorAI-v2',
+    demo: 'https://vector-ai-one-pi.vercel.app/',
   },
   {
     id: 'safe-stay',
@@ -45,8 +45,8 @@ export const projects = [
       'JWT authentication with protected routes and role-based middleware',
       'Scalable MERN backend with role-based dashboards',
     ],
-    github: 'https://github.com/aubaid/safe-stay',
-    demo: 'https://safe-stay.example.com',
+    github: 'https://github.com/AubaidAhmedSaiyed/SafeStay',
+    demo: 'https://safe-stay-v0.vercel.app/',
   },
   {
     id: 'expense-tracker',
@@ -65,8 +65,8 @@ export const projects = [
       'Search, sort, and filter with localStorage persistence',
       'Semantic layout, keyboard-friendly controls, and aria-live toasts',
     ],
-    github: 'https://github.com/aubaid/expense-tracker',
-    demo: 'https://expense-tracker.example.com',
+    github: 'https://github.com/AubaidAhmedSaiyed/ExpenseTracker',
+    demo: 'https://expensetracker-rosy-eight.vercel.app/',
   },
   {
     id: 'tour-companion',
@@ -85,7 +85,27 @@ export const projects = [
       'Contact forms and automated newsletter subscription system',
       'Dynamic PHP + MySQL backend with responsive mobile and desktop UI',
     ],
-    github: 'https://github.com/aubaid/tour-companion',
-    demo: 'https://tour-companion.example.com',
+    github: 'https://github.com/AubaidAhmedSaiyed/tour-companion',
+    demo: '#',
   },
+  {
+  id: 'transaction-reconciliation-engine',
+  title: 'Transaction Reconciliation Engine',
+  description:
+    'Backend system that reconciles user-reported and exchange-exported financial transactions from CSV data using configurable matching rules and tolerance-based logic.',
+  summary:
+    'Scalable reconciliation pipeline built with Node.js and MongoDB that ingests raw CSV transactions, normalizes inconsistent financial data, and matches records using rule-based tolerance logic while preserving full audit trail and lineage.',
+  preview: '/projects/image.png',
+  tech: ['Node.js', 'MongoDB', 'JavaScript', 'REST APIs', 'CSV Processing', 'Data Engineering'],
+  features: [
+    'Ingestion of messy user and exchange CSV transaction data with validation and storage',
+    'Normalization layer for standardizing asset names and transaction types across systems',
+    'Rule-based matching engine using timestamp and quantity tolerance thresholds',
+    'Optimized candidate filtering using indexed lookups and normalized keys',
+    'Classification of transactions into matched, unmatched, and conflicting categories',
+    'Structured reconciliation report generation in CSV format with full traceability',
+    'REST APIs for triggering reconciliation runs and retrieving reports and summaries'
+  ],
+  github: 'https://github.com/AubaidAhmedSaiyed/Transaction_Reconciliation',
+}
 ];
