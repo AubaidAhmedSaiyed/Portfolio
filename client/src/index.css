@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: 'Geist Sans', 'Satoshi', ui-sans-serif, system-ui, sans-serif;
+  background-color: #080b12;
+  color: #d4d4d8;
+  --brand: #3d6fd4;
+  --brand-light: #5b87e8;
+  --brand-dim: rgba(61, 111, 212, 0.14);
+  --surface: #0f131c;
+  --border: rgba(255, 255, 255, 0.07);
+  --spot-x: 50%;
+  --spot-y: 50%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: #080b12;
+  color: #d4d4d8;
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  isolation: isolate;
+}
+
+::selection {
+  background: rgba(61, 111, 212, 0.28);
+  color: #fafafa;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background: #080b12;
+}
+
+.page-container {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 2.5rem) 4rem;
+}
+
+.layout-wide {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding-left: clamp(1rem, 4vw, 2.5rem);
+  padding-right: clamp(1rem, 4vw, 2.5rem);
+}
+
+.section-heading {
+  font-family: 'Geist Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+.section-title {
+  font-family: 'Satoshi', 'Geist Sans', sans-serif;
+  margin-top: 0.5rem;
+  font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: #f4f4f5;
+}
+
+.font-display {
+  font-family: 'Satoshi', 'Geist Sans', sans-serif;
+}
+
+.prose-muted {
+  color: #a1a1aa;
+}
+
+.link-underline {
+  position: relative;
+  text-decoration: none;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+  opacity: 0.6;
+}
+
+.link-underline:hover::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 768px) {
+  .page-container,
+  .layout-wide {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

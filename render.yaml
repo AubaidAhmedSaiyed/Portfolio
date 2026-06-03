@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: aubaid-portfolio-backend
+    env: node
+    plan: free
+    region: oregon
+    branch: main
+    buildCommand: "cd server && npm install"
+    startCommand: "cd server && npm start"
+    envVars:
+      - key: MONGO_URI
+      - key: PORT
+      - key: CLIENT_URL
