@@ -5,12 +5,12 @@ export const siteMeta = {
   tagline: 'Building user-centric products with backend depth, ML, and cloud-ready systems.',
   intro:
     'I am a B.Tech IT student graduating in 2028, exploring how technology can solve real-world problems through user-centric solutions with a growing focus on web engineering, backend infrastructure, AI/ML, and systems that scale without losing their human purpose.',
-  resume: '#',
+  resume: '/Resume_AubaidAhmed.pdf',
   profileImage: '/photo.jpeg',
-  email: 'aubaid@example.com',
-  github: 'https://github.com/aubaid',
-  linkedin: 'https://linkedin.com/in/aubaid',
-  twitter: 'https://twitter.com/aubaid',
+  email: 'aubaidsaiyed12@gmail.com',
+  github: 'https://github.com/AubaidAhmedSaiyed/',
+  linkedin: 'https://www.linkedin.com/in/aubaid-ahmed-saiyed/',
+  twitter: 'https://x.com/AubaidAhmedS',
   exploring: [
     'Backend Infrastructure',
     'AI / ML',
