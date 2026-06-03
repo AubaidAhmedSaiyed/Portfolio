@@ -1,7 +1,7 @@
 export const skillGroups = [
   {
     title: 'Frontend',
-    items: ['React.js', 'JavaScript', 'Tailwind CSS', 'Bootstrap'],
+    items: ['React.js', 'Tailwind CSS', 'Bootstrap', 'JavaScript'],
   },
   {
     title: 'Backend',
@@ -20,7 +20,7 @@ export const skillGroups = [
     items: ['Git/GitHub', 'Postman', 'VS Code', 'Recharts'],
   },
   {
-    title: 'Core Concepts',
+    title: 'Core CS',
     items: ['OOP', 'DSA', 'REST APIs', 'System Design'],
   },
   {

@@ -1,28 +1,29 @@
 import SectionHeading from '../components/SectionHeading';
 import TimelineYear from '../components/TimelineYear';
-import SectionDivider from '../components/SectionDivider';
+import SectionWave from '../components/SectionWave';
 import { journeyTimeline } from '../data/timeline';
 
 const Timeline = () => {
   return (
-    <section id="journey" className="section-panel">
-      <SectionDivider />
+    <section id="journey" className="section-panel relative">
+      <SectionWave />
       <div className="layout-wide">
         <SectionHeading
+          wide
           eyebrow="Journey"
-          title="How my path as a developer has unfolded."
-          description="A chronological look at learning, building, and growing through real projects."
+          title="A calm timeline of learning and building."
+          description="From Python fundamentals to production systems, open source, and product-focused engineering."
         />
-        <div className="relative mt-2 w-full">
+        <div className="relative mt-4 w-full">
           <div
-            className="pointer-events-none absolute left-[4.5rem] top-0 hidden h-full w-px lg:left-[10rem] lg:block"
+            className="pointer-events-none absolute left-[4.5rem] top-0 hidden h-full w-px lg:left-[11rem] lg:block"
             style={{
               background:
-                'linear-gradient(180deg, rgba(61,111,212,0.35), rgba(255,255,255,0.04) 90%)',
+                'linear-gradient(180deg, rgba(26,61,47,0.35), rgba(26,61,47,0.05) 95%)',
             }}
             aria-hidden
           />
-          <div className="w-full">
+          <div className="w-full space-y-2">
             {journeyTimeline.map((block, index) => (
               <TimelineYear
                 key={block.year}

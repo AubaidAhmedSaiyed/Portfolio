@@ -13,23 +13,22 @@ export default {
       },
       colors: {
         matte: {
-          DEFAULT: '#080b12',
-          elevated: '#0f131c',
-          card: '#141a26',
-          border: 'rgba(255, 255, 255, 0.07)',
+          DEFAULT: 'var(--bg-main)',
+          elevated: 'var(--surface-elevated)',
+          card: 'var(--surface-card)',
+          border: 'var(--border-color)',
         },
         brand: {
-          DEFAULT: '#3d6fd4',
-          light: '#5b87e8',
-          muted: '#2a4f9e',
-          dim: 'rgba(61, 111, 212, 0.14)',
-          glow: 'rgba(61, 111, 212, 0.08)',
+          DEFAULT: 'var(--brand)',
+          light: 'var(--brand-light)',
+          muted: 'var(--brand-muted)',
+          dim: 'var(--brand-dim)',
+          glow: 'var(--brand-glow)',
         },
       },
       boxShadow: {
-        card: '0 1px 0 rgba(255,255,255,0.04) inset, 0 20px 40px -16px rgba(0,0,0,0.45)',
-        'card-hover':
-          '0 0 0 1px rgba(61, 111, 212, 0.35), 0 1px 0 rgba(255,255,255,0.04) inset, 0 24px 48px -16px rgba(0,0,0,0.5)',
+        card: 'var(--shadow-card)',
+        'card-hover': 'var(--shadow-card-hover)',
       },
       animation: {
         'grid-pulse': 'grid-pulse 5s ease-in-out infinite',

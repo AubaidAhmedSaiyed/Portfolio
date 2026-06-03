@@ -39,6 +39,8 @@ export const journeyTimeline = [
       'Improving engineering depth',
       'Building polished projects',
       'Growing through open source and product focused development',
+      'Developing data science and ML foundations',
+      'Learning DevOps and cloud basics for production readiness',
     ],
   },
 ];

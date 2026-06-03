@@ -12,9 +12,9 @@ const EngineeringFocus = () => (
         viewport={{ once: true }}
         transition={{ duration: 0.35, delay: index * 0.04 }}
       >
-        <SpotlightCard className="h-full rounded-xl border border-white/[0.07] bg-matte-elevated p-4">
-          <p className="text-sm font-medium text-zinc-200">{item.title}</p>
-          <p className="mt-1.5 text-[13px] leading-snug text-zinc-400">{item.description}</p>
+        <SpotlightCard className="h-full rounded-xl border border-brand/15 bg-matte-elevated p-4 shadow-sm">
+          <p className="text-sm font-semibold text-zinc-800">{item.title}</p>
+          <p className="mt-1.5 text-[13px] leading-snug text-zinc-600">{item.description}</p>
         </SpotlightCard>
       </motion.div>
     ))}

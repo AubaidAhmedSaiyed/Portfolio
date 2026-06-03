@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { siteMeta } from '../data/siteData';
 import { scrollToSection } from '../utils/scrollTo';
 
-const Navbar = ({ activeSection }) => {
+const Navbar = ({ activeSection, theme, setTheme }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -33,23 +33,23 @@ const Navbar = ({ activeSection }) => {
   const sectionFromHref = (href) => href.replace('#', '');
 
   return (
-    <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
+    <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-4">
       <div
-        className={`nav-shell pointer-events-auto w-full max-w-4xl border px-2 sm:px-4 ${
+        className={`nav-shell pointer-events-auto w-full max-w-5xl border px-3 sm:px-5 ${
           mobileOpen ? 'rounded-2xl' : 'rounded-full'
         }`}
         data-scrolled={isScrolled}
       >
-        <div className="flex h-11 items-center justify-between gap-2 sm:h-12 sm:gap-4">
+        <div className="grid h-11 grid-cols-[auto_1fr_auto] items-center gap-2 sm:h-12">
           <a
             href="#home"
             onClick={(e) => handleNavClick(e, '#home')}
-            className="link-underline shrink-0 px-3 text-sm font-medium text-zinc-200"
+            className="link-underline px-1 text-sm font-semibold text-zinc-800"
           >
             {siteMeta.shortName}
           </a>
 
-          <nav className="hidden items-center md:flex" aria-label="Main">
+          <nav className="hidden items-center justify-center md:flex" aria-label="Main">
             {siteMeta.navLinks.map((link) => {
               const id = sectionFromHref(link.href);
               const isActive = activeSection === id;
@@ -58,8 +58,8 @@ const Navbar = ({ activeSection }) => {
                   key={link.label}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`relative px-3 py-2 text-[13px] font-medium transition-colors duration-200 ${
-                    isActive ? 'nav-link-active text-zinc-100' : 'text-zinc-500 hover:text-zinc-300'
+                  className={`relative px-2.5 py-2 text-[13px] font-medium transition-colors lg:px-3 ${
+                    isActive ? 'nav-link-active' : 'text-zinc-600 hover:text-zinc-900'
                   }`}
                 >
                   {link.label}
@@ -68,45 +68,63 @@ const Navbar = ({ activeSection }) => {
             })}
           </nav>
 
-          <button
-            type="button"
-            aria-expanded={mobileOpen}
-            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-            onClick={() => setMobileOpen((v) => !v)}
-            className="mr-1 inline-flex h-8 w-8 items-center justify-center rounded-full text-zinc-400 transition hover:bg-white/[0.04] hover:text-zinc-200 md:hidden"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              {mobileOpen ? (
-                <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+          <div className="flex items-center justify-end gap-2">
+            <button
+              type="button"
+              aria-label="Toggle theme"
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="inline-flex h-8 w-8 items-center justify-center rounded-full text-zinc-600 transition hover:bg-black/[0.04]"
+            >
+              {theme === 'dark' ? (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414m0-11.314l1.414 1.414M18.364 16.95l1.414 1.414" strokeLinecap="round" />
+                  <circle cx="12" cy="12" r="4" fill="currentColor" />
+                </svg>
               ) : (
-                <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                </svg>
               )}
-            </svg>
-          </button>
-        </div>
+            </button>
 
-        {mobileOpen ? (
-          <nav
-            className="border-t border-white/[0.06] px-2 py-3 md:hidden"
-            aria-label="Mobile"
-          >
-            {siteMeta.navLinks.map((link) => {
-              const id = sectionFromHref(link.href);
-              return (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                  className={`block rounded-lg px-3 py-2.5 text-sm ${
-                    activeSection === id ? 'bg-white/[0.04] text-zinc-100' : 'text-zinc-500'
-                  }`}
-                >
-                  {link.label}
-                </a>
-              );
-            })}
-          </nav>
-        ) : null}
+            <button
+              type="button"
+              aria-expanded={mobileOpen}
+              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+              onClick={() => setMobileOpen((v) => !v)}
+              className="inline-flex h-8 w-8 items-center justify-center rounded-full text-zinc-600 transition hover:bg-black/[0.04] md:hidden"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                {mobileOpen ? (
+                  <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+                ) : (
+                  <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
+                )}
+              </svg>
+            </button>
+          </div>
+
+          {mobileOpen ? (
+            <nav className="border-t border-brand/10 px-2 py-3 md:hidden" aria-label="Mobile">
+              {siteMeta.navLinks.map((link) => {
+                const id = sectionFromHref(link.href);
+                const isActive = activeSection === id;
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    onClick={(e) => handleNavClick(e, link.href)}
+                    className={`block rounded-lg px-3 py-2.5 text-sm font-medium ${
+                      isActive ? 'bg-black/[0.04] font-semibold text-brand-light' : 'text-zinc-600'
+                    }`}
+                  >
+                    {link.label}
+                  </a>
+                );
+              })}
+            </nav>
+          ) : null}
+        </div>
       </div>
     </header>
   );
