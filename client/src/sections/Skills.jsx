@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
 import SectionHeading from '../components/SectionHeading';
-import SectionWave from '../components/SectionWave';
+import SectionDivider from '../components/SectionDivider';
 import { skillGroups, softSkills } from '../data/skills';
 
 const Skills = () => {
   return (
-    <section id="skills" className="section-panel section-chapter relative">
-      <SectionWave variant="cream" />
-      <div className="layout-wide">
+    <section id="skills" className="section-panel relative bg-alt">
+      <SectionDivider />
+      <div className="layout-wide mt-8">
         <SectionHeading eyebrow="Skills" title="Tools and concepts I work with regularly." />
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {skillGroups.map((group, index) => (
@@ -25,7 +25,7 @@ const Skills = () => {
                 {group.items.map((item) => (
                   <li
                     key={item}
-                    className="rounded-full border border-brand/12 bg-brand-dim px-3 py-1 text-xs text-zinc-700 transition hover:border-brand/30 hover:text-brand"
+                    className="rounded-full border border-brand/12 bg-brand-dim px-3 py-1 text-[13px] text-zinc-700 transition hover:border-brand/30 hover:text-brand"
                   >
                     {item}
                   </li>
@@ -34,7 +34,7 @@ const Skills = () => {
             </motion.div>
           ))}
         </div>
-        <p className="mt-10 text-sm text-zinc-600">
+        <p className="mt-10 text-[15px] text-zinc-600">
           Also: {softSkills.join(', ').toLowerCase()}.
         </p>
       </div>

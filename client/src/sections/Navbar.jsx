@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { siteMeta } from '../data/siteData';
 import { scrollToSection } from '../utils/scrollTo';
 
-const Navbar = ({ activeSection, theme, setTheme }) => {
+const Navbar = ({ activeSection }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -35,12 +35,12 @@ const Navbar = ({ activeSection, theme, setTheme }) => {
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-4">
       <div
-        className={`nav-shell pointer-events-auto w-full max-w-5xl border px-3 sm:px-5 ${
+        className={`nav-shell pointer-events-auto w-full max-w-5xl border px-3 sm:px-5 flex flex-col ${
           mobileOpen ? 'rounded-2xl' : 'rounded-full'
         }`}
         data-scrolled={isScrolled}
       >
-        <div className="grid h-11 grid-cols-[auto_1fr_auto] items-center gap-2 sm:h-12">
+        <div className="flex h-11 w-full items-center justify-between sm:h-12">
           <a
             href="#home"
             onClick={(e) => handleNavClick(e, '#home')}
@@ -58,7 +58,7 @@ const Navbar = ({ activeSection, theme, setTheme }) => {
                   key={link.label}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`relative px-2.5 py-2 text-[13px] font-medium transition-colors lg:px-3 ${
+                  className={`relative px-2.5 py-2 text-[14px] font-medium transition-colors lg:px-3 focus-glow ${
                     isActive ? 'nav-link-active' : 'text-zinc-600 hover:text-zinc-900'
                   }`}
                 >
@@ -68,25 +68,7 @@ const Navbar = ({ activeSection, theme, setTheme }) => {
             })}
           </nav>
 
-          <div className="flex items-center justify-end gap-2">
-            <button
-              type="button"
-              aria-label="Toggle theme"
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="inline-flex h-8 w-8 items-center justify-center rounded-full text-zinc-600 transition hover:bg-black/[0.04]"
-            >
-              {theme === 'dark' ? (
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M7.05 16.95l-1.414 1.414m0-11.314l1.414 1.414M18.364 16.95l1.414 1.414" strokeLinecap="round" />
-                  <circle cx="12" cy="12" r="4" fill="currentColor" />
-                </svg>
-              ) : (
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-                </svg>
-              )}
-            </button>
-
+          <div className="flex items-center md:hidden">
             <button
               type="button"
               aria-expanded={mobileOpen}
@@ -105,7 +87,7 @@ const Navbar = ({ activeSection, theme, setTheme }) => {
           </div>
 
           {mobileOpen ? (
-            <nav className="border-t border-brand/10 px-2 py-3 md:hidden" aria-label="Mobile">
+            <nav className="border-t border-brand/10 px-2 py-3 w-full md:hidden" aria-label="Mobile">
               {siteMeta.navLinks.map((link) => {
                 const id = sectionFromHref(link.href);
                 const isActive = activeSection === id;

@@ -1,5 +1,17 @@
 export const experienceItems = [
   {
+    role: '1st Place, Ideation Round',
+    company: 'Hackathon',
+    timeframe: '2025',
+    label: 'Achievement',
+    tags: ['Problem Solving', 'Entrepreneurship', 'Innovation'],
+    highlights: [
+      'Led my team to secure first place in the initial ideation phase.',
+      'Designed a scalable, user-centric solution addressing real-world problems.',
+      'Pitched technical architecture and business viability to judges.',
+    ],
+  },
+  {
     role: 'Hacktoberfest Contributor',
     company: 'Open Source',
     timeframe: '2024',

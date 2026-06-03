@@ -7,7 +7,7 @@ const SectionHeading = ({ eyebrow, title, description, wide = false }) => {
       <p className="section-heading">{eyebrow}</p>
       <h2 className="section-title">{title}</h2>
       {description ? (
-        <p className="mt-4 text-[15px] leading-relaxed text-zinc-600">{description}</p>
+        <p className="mt-4 text-[16px] leading-relaxed text-zinc-600">{description}</p>
       ) : null}
     </motion.div>
   );

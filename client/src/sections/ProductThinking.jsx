@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
 import SectionHeading from '../components/SectionHeading';
 import SpotlightCard from '../components/SpotlightCard';
-import SectionWave from '../components/SectionWave';
+import SectionDivider from '../components/SectionDivider';
 import { productPoints } from '../data/productThinking';
 
 const ProductThinking = () => {
   return (
-    <section id="product-thinking" className="section-panel section-chapter relative">
-      <SectionWave variant="cream" />
-      <div className="layout-wide">
+    <section id="product-thinking" className="section-panel relative bg-alt">
+      <SectionDivider />
+      <div className="layout-wide mt-8">
         <SectionHeading
           eyebrow="Product thinking"
           title="How I connect engineering depth with real outcomes."

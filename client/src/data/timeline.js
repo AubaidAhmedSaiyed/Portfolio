@@ -24,7 +24,6 @@ export const journeyTimeline = [
     milestones: [
       'Built production style projects',
       'Worked on Vector AI and Safe Stay',
-      'Integrated ML systems into web applications',
       'Participated in Hacktoberfest',
       'Improved async state handling',
       'Explored rate limiting and data extraction systems',
@@ -39,7 +38,7 @@ export const journeyTimeline = [
       'Improving engineering depth',
       'Building polished projects',
       'Growing through open source and product focused development',
-      'Developing data science and ML foundations',
+      'Integrated ML systems into web applications',
       'Learning DevOps and cloud basics for production readiness',
     ],
   },

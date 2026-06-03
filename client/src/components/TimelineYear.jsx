@@ -22,7 +22,7 @@ const TimelineYear = ({ block, index, isLast }) => {
 
       <ul className="grid gap-x-10 gap-y-3 sm:grid-cols-2 xl:grid-cols-2">
         {block.milestones.map((milestone) => (
-          <li key={milestone} className="flex gap-3 text-[15px] leading-snug text-zinc-600">
+          <li key={milestone} className="flex gap-3 text-[16px] leading-snug text-zinc-600">
             <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" aria-hidden />
             <span className="max-w-md">{milestone}</span>
           </li>

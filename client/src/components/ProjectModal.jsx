@@ -61,7 +61,7 @@ const ProjectModal = ({ project, onClose }) => {
                 </button>
               </div>
 
-              <p className="mt-4 text-[15px] leading-relaxed text-zinc-600">{project.summary || project.description}</p>
+              <p className="mt-4 text-[16px] leading-relaxed text-zinc-600">{project.summary || project.description}</p>
 
               <div className="mt-5 flex flex-wrap gap-1.5">
                 {project.tech.map((stack) => (

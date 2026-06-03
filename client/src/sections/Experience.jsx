@@ -2,14 +2,14 @@ import { motion } from 'framer-motion';
 import SectionHeading from '../components/SectionHeading';
 import SpotlightCard from '../components/SpotlightCard';
 import EngineeringTag from '../components/EngineeringTag';
-import SectionWave from '../components/SectionWave';
+import SectionDivider from '../components/SectionDivider';
 import { experienceItems } from '../data/experience';
 
 const Experience = () => {
   return (
     <section id="experience" className="section-panel relative">
-      <SectionWave />
-      <div className="layout-wide">
+      <SectionDivider />
+      <div className="layout-wide mt-8">
         <SectionHeading eyebrow="Experience" title="Open source and project work in the field." />
         <div className="space-y-5">
           {experienceItems.map((exp, index) => (
@@ -20,7 +20,7 @@ const Experience = () => {
               viewport={{ once: true, amount: 0.12 }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
             >
-              <SpotlightCard className="rounded-2xl border border-brand/12 bg-matte-elevated p-6 shadow-sm md:p-8">
+              <SpotlightCard className="rounded-2xl border border-brand/12 bg-matte-elevated p-5 md:p-6 shadow-sm">
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div>
                     <span className="rounded-full border border-brand/20 bg-brand-dim px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-brand-light">
@@ -38,9 +38,9 @@ const Experience = () => {
                     ))}
                   </div>
                 ) : null}
-                <ul className="mt-5 space-y-2">
+                <ul className="mt-3 space-y-2">
                   {exp.highlights.map((point) => (
-                    <li key={point} className="text-[15px] leading-relaxed text-zinc-600">
+                    <li key={point} className="text-[16px] leading-relaxed text-zinc-600">
                       {point}
                     </li>
                   ))}

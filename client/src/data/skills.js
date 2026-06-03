@@ -21,7 +21,7 @@ export const skillGroups = [
   },
   {
     title: 'Core CS',
-    items: ['OOP', 'DSA', 'REST APIs', 'System Design'],
+    items: ['OOP', 'DSA', 'Computer Networks', 'DBMS'],
   },
   {
     title: 'Product Thinking',

@@ -1,13 +1,13 @@
 import SectionHeading from '../components/SectionHeading';
 import TimelineYear from '../components/TimelineYear';
-import SectionWave from '../components/SectionWave';
+import SectionDivider from '../components/SectionDivider';
 import { journeyTimeline } from '../data/timeline';
 
 const Timeline = () => {
   return (
     <section id="journey" className="section-panel relative">
-      <SectionWave />
-      <div className="layout-wide">
+      <SectionDivider />
+      <div className="layout-wide mt-8">
         <SectionHeading
           wide
           eyebrow="Journey"

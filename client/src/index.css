@@ -6,22 +6,22 @@
   color-scheme: light;
   font-family: 'Geist Sans', 'Satoshi', ui-sans-serif, system-ui, sans-serif;
   
-  /* Color Palette — lightest beige + dark green */
-  --bg-main: #fdfcf9;
-  --surface-elevated: #ffffff;
-  --surface-card: #faf9f4;
-  --border-color: rgba(26, 61, 47, 0.16);
+  /* Color Palette — Warm Beige & Olive Green */
+  --bg-main: #f5f1e6;
+  --surface-elevated: #fbfaf6;
+  --surface-card: #efebe0;
+  --border-color: rgba(46, 71, 52, 0.15);
 
   /* Text */
-  --text-main: #1c1b18;
-  --text-muted: #5c5a54;
+  --text-main: #2a2a2a;
+  --text-muted: #757065;
 
   /* Dark green accents */
-  --brand: #1a3d2f;
-  --brand-light: #1f4a36;
-  --brand-muted: #163328;
-  --brand-dim: rgba(26, 61, 47, 0.1);
-  --brand-glow: rgba(26, 61, 47, 0.06);
+  --brand: #2f593b;
+  --brand-light: #5f8a68;
+  --brand-muted: #3d6f4f;
+  --brand-dim: rgba(47, 89, 59, 0.15);
+  --brand-glow: rgba(47, 89, 59, 0.12);
 
   /* Shadows */
   --shadow-card: 0 1px 2px rgba(26, 61, 47, 0.04), 0 8px 24px -8px rgba(28, 27, 24, 0.08);
@@ -31,92 +31,7 @@
   --spot-y: 50%;
 }
 
-html.dark {
-  color-scheme: dark;
-  --bg-main: #13170f;
-  --surface-elevated: #1d2412;
-  --surface-card: #222b14;
-  --border-color: rgba(189, 180, 149, 0.18);
-  --text-main: #efe6cf;
-  --text-muted: #c8bca4;
-  --brand: #8aab4b;
-  --brand-light: #d2daa0;
-  --brand-muted: #a5b26a;
-  --brand-dim: rgba(138, 171, 75, 0.12);
-  --brand-glow: rgba(138, 171, 75, 0.10);
-  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.16), 0 8px 24px -8px rgba(0, 0, 0, 0.45);
-  --shadow-card-hover: 0 0 0 1px rgba(138, 171, 75, 0.18), 0 1px 2px rgba(0, 0, 0, 0.12), 0 16px 36px -12px rgba(0, 0, 0, 0.18);
-}
 
-html.dark body {
-  background: var(--bg-main);
-  color: var(--text-main);
-}
-
-html.dark .app-shell {
-  background: var(--bg-main);
-}
-
-html.dark .nav-shell[data-scrolled='false'] {
-  background: rgba(22, 28, 16, 0.72);
-  border-color: rgba(189, 180, 149, 0.18);
-}
-
-html.dark .nav-shell[data-scrolled='true'] {
-  background: rgba(22, 28, 16, 0.94);
-  border-color: rgba(189, 180, 149, 0.24);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.22);
-}
-
-html.dark .text-zinc-900 {
-  color: #efe6cf !important;
-}
-
-html.dark .text-zinc-800 {
-  color: #e6dcc7 !important;
-}
-
-html.dark .text-zinc-700 {
-  color: #c8bca4 !important;
-}
-
-html.dark .text-zinc-600 {
-  color: #a79a7c !important;
-}
-
-html.dark .text-zinc-500 {
-  color: #8f8568 !important;
-}
-
-html.dark .input-field {
-  color: var(--text-main);
-  border-color: rgba(189, 180, 149, 0.25);
-}
-
-html.dark .input-field:focus {
-  background: var(--surface-card);
-}
-
-html.dark .btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-}
-
-html.dark .hero-grid-cell {
-  border-color: rgba(189, 180, 149, 0.18);
-  background: rgba(255, 255, 255, 0.04);
-}
-
-html.dark .hero-blue-wash {
-  background: radial-gradient(ellipse 80% 60% at 75% 40%, rgba(138, 171, 75, 0.08), transparent 65%);
-}
-
-html.dark .profile-photo-frame {
-  box-shadow: 0 0 0 1px rgba(189, 180, 149, 0.15), 0 16px 36px -12px rgba(0, 0, 0, 0.45);
-}
-
-html.dark footer {
-  background: rgba(255, 255, 255, 0.05);
-}
 
 html {
   scroll-behavior: smooth;
@@ -130,7 +45,7 @@ body {
   width: 100%;
   background: var(--bg-main);
   color: var(--text-main);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -146,10 +61,10 @@ body::before {
   inset: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.022;
+  opacity: 0.035;
   pointer-events: none;
   z-index: 9999;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 * {
@@ -223,12 +138,33 @@ textarea {
 }
 
 .section-chapter {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
   background: var(--surface-elevated);
   border-radius: 0;
-  margin-left: calc(-1 * clamp(1.25rem, 5vw, 3rem));
-  margin-right: calc(-1 * clamp(1.25rem, 5vw, 3rem));
+  margin-left: -50vw;
+  margin-right: -50vw;
   padding-left: clamp(1.25rem, 5vw, 3rem);
   padding-right: clamp(1.25rem, 5vw, 3rem);
+}
+
+.section-chapter::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--surface-elevated);
+  left: 0;
+  margin-left: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bg-alt {
+  background-color: var(--surface-elevated);
 }
 
 .link-underline {
@@ -254,7 +190,47 @@ textarea {
   transform: scaleX(1);
 }
 
-@media (max-width: 768px) {
+.btn-olive {
+  @apply rounded-full px-5 py-2 font-medium text-white transition-colors duration-200 bg-olive hover:bg-olive-dark;
+}
+.modern-card {
+  @apply bg-matte-card rounded-xl shadow-card border border-matte-border p-6;
+}
+.wave-divider {
+  @apply h-12 w-full bg-no-repeat bg-bottom;
+}
+.fade-section {
+  @apply opacity-0 transform translate-y-4;
+}
+.fade-section.in-view {
+  @apply opacity-100 translate-y-0 transition-opacity transition-transform duration-[800ms] ease-out;
+}
+.soft-hover {
+  @apply transition-all duration-300;
+}
+.soft-hover:hover {
+  @apply border-olive/40;
+  transform: translateY(-2px);
+}
+.doodle {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm20 20h.01v.01H20V20z' fill='currentColor' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-size: 40px 40px;
+  opacity: 0.03;
+}
+.dot-ambient {
+  @apply absolute w-1.5 h-1.5 rounded-full bg-olive/30;
+  animation: dotPulse 3s ease-in-out infinite;
+}
+.blueprint-grid {
+  background-image: linear-gradient(rgba(122, 139, 99, 0.08) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(122, 139, 99, 0.08) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+.focus-glow:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(138,171,75,0.4);
+}
+@media (max-width: 640px) {
   .page-container,
   .layout-wide {
     padding-left: 1rem;

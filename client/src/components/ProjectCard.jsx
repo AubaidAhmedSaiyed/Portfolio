@@ -17,7 +17,7 @@ const ProjectCard = ({ project, onPreview }) => {
 
   return (
     <SpotlightCard className="h-full">
-      <article className="project-card-hover flex flex-col overflow-hidden rounded-2xl border border-brand/12 bg-matte-elevated shadow-sm">
+      <article className="modern-card soft-hover flex flex-col overflow-hidden !p-0">
         {project.preview ? (
           <button
             type="button"
@@ -41,26 +41,56 @@ const ProjectCard = ({ project, onPreview }) => {
           </button>
         ) : null}
 
-        <div className="flex flex-col gap-6 p-6 md:flex-row md:items-start md:gap-10 md:p-8 lg:gap-12 lg:p-9">
-          <div className="min-w-0 md:w-[38%] md:shrink-0 lg:w-[34%]">
+        <div className="flex flex-col gap-6 p-6 md:p-8 lg:p-9">
+          <div className="flex flex-col gap-5">
             <h3 className="font-display text-xl font-bold tracking-tight text-zinc-900 lg:text-[1.35rem]">
               {project.title}
             </h3>
 
-            <p className="mt-3 text-[15px] leading-relaxed text-zinc-600">{project.description}</p>
+            <ul className="grid gap-2 sm:grid-cols-2 mt-1 mb-2">
+              {featureList.slice(0, 6).map((feature) => (
+                <li key={feature} className="flex gap-2 text-[14px] leading-snug text-zinc-600">
+                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand" aria-hidden />
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
 
-            <div className="mt-5 flex flex-wrap gap-1.5">
+            <p className="text-[16px] leading-relaxed text-zinc-600">{project.description}</p>
+
+            {(project.metrics?.length || project.impact) ? (
+              <div className="mt-2 rounded-xl border border-brand/10 bg-matte-card p-4">
+                {project.impact ? <p className="mb-2 text-[15px] font-medium text-brand">{project.impact}</p> : null}
+                {project.metrics?.length ? (
+                  <div className="flex flex-wrap gap-2">
+                    {project.metrics.map((m) => (
+                      <span
+                        key={m.label}
+                        className="inline-flex items-baseline gap-1.5 rounded-md border border-brand/12 bg-matte-elevated px-2.5 py-1"
+                      >
+                        <span className="text-[11px] font-medium uppercase tracking-wide text-zinc-500">
+                          {m.label}
+                        </span>
+                        <span className="font-mono text-[13px] font-semibold text-brand">{m.value}</span>
+                      </span>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+            ) : null}
+
+            <div className="mt-3 flex flex-wrap gap-1.5">
               {project.tech.map((stack) => (
                 <span
                   key={stack}
-                  className="rounded-full border border-brand/12 bg-brand-dim px-2.5 py-1 text-[11px] font-medium text-brand"
+                  className="rounded-full border border-brand/20 bg-brand-dim px-2.5 py-0.5 text-[12px] font-semibold uppercase tracking-wider text-brand-light"
                 >
                   {stack}
                 </span>
               ))}
             </div>
 
-            <div className="mt-6 flex flex-wrap items-center gap-5">
+            <div className="mt-4 flex flex-wrap items-center gap-5">
               <a
                 href={project.github}
                 target="_blank"
@@ -89,42 +119,6 @@ const ProjectCard = ({ project, onPreview }) => {
                 Full details
               </button>
             </div>
-          </div>
-
-          <div className="min-w-0 flex-1 border-t border-brand/8 pt-6 md:border-l md:border-t-0 md:pl-10 md:pt-0 lg:pl-12">
-            <ul className="grid gap-2 sm:grid-cols-2">
-              {featureList.slice(0, 6).map((feature) => (
-                <li key={feature} className="flex gap-2 text-[13px] leading-snug text-zinc-600">
-                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand" aria-hidden />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-
-            {(project.metrics?.length || project.impact) ? (
-              <div className="mt-5 rounded-xl border border-brand/10 bg-matte-card p-4">
-                {project.metrics?.length ? (
-                  <div className="flex flex-wrap gap-2">
-                    {project.metrics.map((m) => (
-                      <span
-                        key={m.label}
-                        className="inline-flex items-baseline gap-1.5 rounded-md border border-brand/12 bg-matte-elevated px-2.5 py-1"
-                      >
-                        <span className="text-[10px] font-medium uppercase tracking-wide text-zinc-500">
-                          {m.label}
-                        </span>
-                        <span className="font-mono text-xs font-semibold text-brand">{m.value}</span>
-                      </span>
-                    ))}
-                  </div>
-                ) : null}
-                {project.impact ? (
-                  <p className={`text-[12px] leading-relaxed text-zinc-600 ${project.metrics?.length ? 'mt-3' : ''}`}>
-                    {project.impact}
-                  </p>
-                ) : null}
-              </div>
-            ) : null}
           </div>
         </div>
       </article>

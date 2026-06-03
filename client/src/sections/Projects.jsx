@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import SectionHeading from '../components/SectionHeading';
 import ProjectCard from '../components/ProjectCard';
 import ProjectModal from '../components/ProjectModal';
-import SectionWave from '../components/SectionWave';
+import SectionDivider from '../components/SectionDivider';
 import { projects } from '../data/projects';
 
 const Projects = () => {
@@ -11,15 +11,15 @@ const Projects = () => {
 
   return (
     <section id="projects" className="section-panel relative">
-      <SectionWave />
-      <div className="layout-wide">
+      <SectionDivider />
+      <div className="layout-wide mt-8">
         <SectionHeading
           wide
           eyebrow="Selected Work"
-          title="A curated gallery of systems I have engineered and shipped."
-          description="Real product previews, backend architecture, and the engineering decisions behind each build."
+          title="A curated gallery of projects I have engineered and shipped."
+          description="An overview of my technical contributions, problem-solving approaches, and the resulting impact of each build."
         />
-        <div className="mx-auto w-full max-w-3xl">
+        <div className="mx-auto w-full max-w-4xl">
           <div className="flex flex-col gap-10 lg:gap-12">
             {projects.map((project, index) => (
               <motion.div

@@ -43,7 +43,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section-panel">
+    <section id="contact" className="section-panel relative bg-alt">
       <SectionDivider />
       <div className="relative z-10 flex items-center justify-center w-full h-full px-4">
         <div className="layout-wide max-w-2xl">
@@ -51,7 +51,7 @@ const Contact = () => {
           <motion.div {...fadeUpView}>
             <p className="section-heading">Contact</p>
             <h2 className="section-title">Say hello.</h2>
-              <p className="text-zinc-600 mt-4 text-[15px] leading-relaxed">
+              <p className="text-zinc-600 mt-4 text-[16px] leading-relaxed">
               Open to internships, collaborations, and technical conversations. Use the form below to share your idea, request, or project opportunity.
             </p>
           </motion.div>
@@ -61,7 +61,7 @@ const Contact = () => {
               <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
                 <div className="space-y-4">
                   <p className="text-sm font-semibold uppercase tracking-wider text-brand-muted">Let’s connect</p>
-                  <p className="text-[15px] leading-relaxed text-zinc-600">
+                  <p className="text-[16px] leading-relaxed text-zinc-600">
                     Prefer to send a direct email or explore my work? I’m available for new projects, collaboration, and technical discussions.
                   </p>
                   <div className="rounded-2xl border border-brand/10 bg-matte-card p-4">
@@ -127,6 +127,7 @@ const Contact = () => {
           </motion.div>
         </div>
       </div>
+    </div>
     </section>
   );
 };
