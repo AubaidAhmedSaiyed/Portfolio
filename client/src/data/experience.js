@@ -7,14 +7,14 @@ export const experienceItems = [
     tags: ['Problem Solving', 'Entrepreneurship', 'Innovation'],
     highlights: [
       'Led my team to secure first place in the initial ideation phase.',
-      'Designed a scalable, user-centric solution addressing real-world problems.',
-      'Pitched technical architecture and business viability to judges.',
+      'Designed a scalable, user-centric solution addressing the existing problems of inefficient civic complaint reporting, language barriers, and limited transparency in municipal issue resolution.',
+      ,
     ],
   },
   {
     role: 'Hacktoberfest Contributor',
     company: 'Open Source',
-    timeframe: '2024',
+    timeframe: '2025',
     label: 'Contribution',
     tags: ['Open Source', 'Performance', 'REST APIs', 'Backend'],
     highlights: [
@@ -26,9 +26,9 @@ export const experienceItems = [
     ],
   },
   {
-    role: 'Software Engineer',
+    role: 'Working Towards Becoming a Software Engineer',
     company: 'Personal and academic projects',
-    timeframe: '2023 – Present',
+    timeframe: '2025 – Present',
     label: 'Projects',
     tags: ['Cloud Basics', 'ML Integration', 'Authentication', 'System Thinking'],
     highlights: [
