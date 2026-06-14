@@ -26,6 +26,19 @@ export const experienceItems = [
     ],
   },
   {
+    role: 'Social Summer of Code: Open Source Contributor',
+    company: 'Open Source',
+    timeframe: '2026',
+    label: 'Contribution',
+    tags: ['Open Source', 'Backend' ,'TypeScript','Performance'],
+    highlights: [
+      'Contributed to an open-source backend system using TypeScript and Node.js.',
+      'Built a centralized file ingestion system with persistent storage, supporting HTTP uploads and cloud downloads using deterministic naming for reliable pipeline processing.',
+      'Engineered a background worker pipeline that automates end-to-end processing (OCR → Vision → Tagging → Indexing) from an in-memory job queue.',
+      'Implemented robust job orchestration with lifecycle tracking, concurrency safety, and per-stage observability for reliable and fault-tolerant execution.',
+    ],
+  },
+  {
     role: 'Working Towards Becoming a Software Engineer',
     company: 'Personal and academic projects',
     timeframe: '2025 – Present',
