@@ -1,7 +1,7 @@
 export const experienceItems = [
   {
     role: '1st Place, Ideation Round',
-    company: 'Hackathon',
+    company: 'GCET Hackathon ',
     timeframe: '2025',
     label: 'Achievement',
     tags: ['Problem Solving', 'Entrepreneurship', 'Innovation'],
@@ -16,7 +16,7 @@ export const experienceItems = [
     company: 'Open Source',
     timeframe: '2025',
     label: 'Contribution',
-    tags: ['Open Source', 'Performance', 'REST APIs', 'Backend'],
+    tags: ['Open Source', 'Performance', 'REST APIs'],
     highlights: [
       'Debugged asynchronous state issues in React applications.',
       'Improved UI responsiveness and layout optimization.',

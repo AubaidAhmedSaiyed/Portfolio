@@ -107,5 +107,39 @@ export const projects = [
     'REST APIs for triggering reconciliation runs and retrieving reports and summaries'
   ],
   github: 'https://github.com/AubaidAhmedSaiyed/Transaction_Reconciliation',
+},
+{
+  id: 'stacklens',
+  title: 'StackLens',
+  description:
+    'Static code analysis engine that parses JavaScript and TypeScript repositories to construct dependency graphs and compute change impact across large-scale codebases.',
+
+  summary:
+    'Repo analysis engine built with Node.js and React that analyzes GitHub repositories through AST traversal, processing repositories with 1,400+ files and 1,495+ dependency relationships. The system constructs dependency graphs, performs impact analysis using graph algorithms, detects architectural issues such as circular dependencies and dead code, and visualizes repository structure through an interactive graph interface.',
+
+  preview: '/projects/stacklen.png',
+
+  tech: [
+    'Node.js',
+    'React',
+    'JavaScript',
+    'TypeScript',
+    'AST',
+    'Graph Algorithms',
+    'React Flow',
+    'GitHub API'
+  ],
+
+  features: [
+    'Analyzes large-scale repositories containing 1,400+ source files and 1,495+ dependency edges',
+    'Parses JavaScript and TypeScript codebases using AST traversal to extract dependency relationships',
+    'Constructs dependency graphs using adjacency-list representations for O(V+E) graph traversal operations',
+    'Computes downstream impact analysis using BFS to identify modules affected by code modifications',
+    'Detects circular dependencies using DFS-based graph traversal algorithms',
+    'Identifies orphaned and potentially unused modules through dependency relationship analysis',
+    'Visualizes repository architecture and dependency paths through an interactive graph interface'
+  ],
+
+  github: 'https://github.com/AubaidAhmedSaiyed/StackLens'
 }
 ];
