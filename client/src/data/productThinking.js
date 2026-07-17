@@ -1,6 +1,6 @@
 export const productPoints = [
   {
-    title: 'User-first thinking',
+    title: 'Problem-first thinking',
     description: 'I start with the problem, not the stack. Understanding users shapes every technical decision.',
   },
   {
