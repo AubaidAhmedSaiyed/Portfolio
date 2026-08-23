@@ -3,25 +3,25 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
   font-family: 'Geist Sans', 'Satoshi', ui-sans-serif, system-ui, sans-serif;
   
-  /* Color Palette — Deep Black & Blue Shades */
-  --bg-main: #0B0E14;
-  --surface-elevated: #11151C;
-  --surface-card: #1A202C;
-  --border-color: rgba(59, 130, 246, 0.15);
+  /* Color Palette — Warm Beige & Olive Green */
+  --bg-main: #f5f1e6;
+  --surface-elevated: #fbfaf6;
+  --surface-card: #efebe0;
+  --border-color: rgba(46, 71, 52, 0.15);
 
   /* Text */
-  --text-main: #FFFFFF;
-  --text-muted: #F8FAFC;
+  --text-main: #2a2a2a;
+  --text-muted: #757065;
 
-  /* Indigo / Modern Blue Accents */
-  --brand: #6366F1;
-  --brand-light: #818CF8;
-  --brand-muted: #4F46E5;
-  --brand-dim: rgba(99, 102, 241, 0.15);
-  --brand-glow: rgba(99, 102, 241, 0.12);
+  /* Dark green accents */
+  --brand: #2f593b;
+  --brand-light: #5f8a68;
+  --brand-muted: #3d6f4f;
+  --brand-dim: rgba(47, 89, 59, 0.15);
+  --brand-glow: rgba(47, 89, 59, 0.12);
 
   /* Shadows */
   --shadow-card: 0 1px 2px rgba(26, 61, 47, 0.04), 0 8px 24px -8px rgba(28, 27, 24, 0.08);
@@ -30,6 +30,8 @@
   --spot-x: 50%;
   --spot-y: 50%;
 }
+
+
 
 html {
   scroll-behavior: smooth;
@@ -74,7 +76,7 @@ body::before {
 }
 
 ::selection {
-  background: rgba(99, 102, 241, 0.2);
+  background: rgba(26, 61, 47, 0.18);
   color: var(--brand-light);
 }
 
@@ -188,17 +190,8 @@ textarea {
   transform: scaleX(1);
 }
 
-.btn-primary {
-  @apply rounded-full px-5 py-2 font-medium text-white transition-colors duration-200 bg-brand hover:bg-brand-muted;
-}
-.btn-secondary {
-  @apply rounded-full px-5 py-2 font-medium transition-colors duration-200;
-  border: 1px solid rgba(99, 102, 241, 0.2);
-  color: var(--text-main);
-}
-.btn-secondary:hover {
-  border-color: rgba(99, 102, 241, 0.5);
-  color: var(--brand-light);
+.btn-olive {
+  @apply rounded-full px-5 py-2 font-medium text-white transition-colors duration-200 bg-olive hover:bg-olive-dark;
 }
 .modern-card {
   @apply bg-matte-card rounded-xl shadow-card border border-matte-border p-6;
@@ -216,7 +209,7 @@ textarea {
   @apply transition-all duration-300;
 }
 .soft-hover:hover {
-  border-color: rgba(99, 102, 241, 0.4);
+  @apply border-olive/40;
   transform: translateY(-2px);
 }
 .doodle {
@@ -225,18 +218,17 @@ textarea {
   opacity: 0.03;
 }
 .dot-ambient {
-  @apply absolute w-1.5 h-1.5 rounded-full;
-  background-color: rgba(99, 102, 241, 0.3);
+  @apply absolute w-1.5 h-1.5 rounded-full bg-olive/30;
   animation: dotPulse 3s ease-in-out infinite;
 }
 .blueprint-grid {
-  background-image: linear-gradient(rgba(99, 102, 241, 0.08) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(99, 102, 241, 0.08) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(122, 139, 99, 0.08) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(122, 139, 99, 0.08) 1px, transparent 1px);
   background-size: 34px 34px;
 }
 .focus-glow:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 0 0 3px rgba(138,171,75,0.4);
 }
 @media (max-width: 640px) {
   .page-container,

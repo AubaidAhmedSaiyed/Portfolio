@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import Navbar from './sections/Navbar';
-import Philosophy from './sections/Philosophy';
+import Hero from './sections/Hero';
 import About from './sections/About';
-import Process from './sections/Process';
 import Projects from './sections/Projects';
 import Skills from './sections/Skills';
 import Experience from './sections/Experience';
-
+import ProductThinking from './sections/ProductThinking';
+import Timeline from './sections/Timeline';
 import Contact from './sections/Contact';
 import Footer from './sections/Footer';
 import ScrollProgress from './components/ScrollProgress';
@@ -24,12 +24,13 @@ function HomePage() {
       <ScrollProgress />
       <Navbar activeSection={activeSection} />
       <main className="page-container relative z-[1]">
-        <Philosophy />
+        <Hero />
         <About />
-        <Process />
         <Projects />
-        <Experience />
         <Skills />
+        <Experience />
+        <ProductThinking />
+        <Timeline />
         <Contact />
       </main>
       <Footer />
