@@ -26,7 +26,7 @@ const Hero = () => {
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-muted">
               {siteMeta.role}
             </p>
-            <h1 className="font-display mt-4 text-[2.35rem] font-bold leading-[1.08] tracking-tight text-zinc-900 sm:text-[2.85rem]">
+            <h1 className="font-display mt-4 text-[2.75rem] font-bold leading-[1.05] tracking-tight text-zinc-900 sm:text-[3.25rem]">
               {siteMeta.name}
             </h1>
             <p className="mt-6 text-[17px] leading-relaxed text-zinc-600">{siteMeta.intro}</p>

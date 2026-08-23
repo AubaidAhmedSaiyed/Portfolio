@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Geist Sans', 'Satoshi', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        display: ['Satoshi', 'Geist Sans', 'ui-sans-serif', 'sans-serif'],
+        sans: ['Geist Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['Satoshi', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       maxWidth: {
         content: '72rem',
@@ -30,6 +30,7 @@ export default {
           light: '#5f8a68',
           dark: '#1f3f2c',
         },
+
       },
       spacing: {
         2: '8px',

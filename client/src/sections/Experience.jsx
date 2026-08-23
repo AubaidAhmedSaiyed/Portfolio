@@ -1,54 +1,55 @@
 import { motion } from 'framer-motion';
-import SectionHeading from '../components/SectionHeading';
-import SpotlightCard from '../components/SpotlightCard';
-import EngineeringTag from '../components/EngineeringTag';
-import SectionDivider from '../components/SectionDivider';
 import { experienceItems } from '../data/experience';
 
 const Experience = () => {
   return (
-    <section id="experience" className="section-panel relative">
-      <SectionDivider />
-      <div className="layout-wide mt-8">
-        <SectionHeading eyebrow="Experience" title="Open source and project work in the field." />
-        <div className="space-y-5">
-          {experienceItems.map((exp, index) => (
+    <section id="experience" className="relative w-full py-32 md:py-48 bg-matte border-b border-brand/10">
+      <div className="layout-wide px-6">
+        
+        <div className="mb-24">
+          <p className="text-[10px] font-sans font-semibold uppercase tracking-[0.2em] text-brand-muted mb-4">
+            06 / Experience
+          </p>
+          <h2 className="font-display text-[2rem] md:text-[2.5rem] font-bold tracking-tight text-white">
+            Professional trajectory.
+          </h2>
+        </div>
+
+        <div className="flex flex-col">
+          {experienceItems.map((item, index) => (
             <motion.div
-              key={exp.role}
-              initial={{ opacity: 0, y: 14 }}
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.12 }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="grid grid-cols-1 md:grid-cols-[150px_1fr] lg:grid-cols-[200px_1fr] gap-4 md:gap-12 py-10 border-t border-brand/10 group"
             >
-              <SpotlightCard className="rounded-2xl border border-brand/12 bg-matte-elevated p-5 md:p-6 shadow-sm">
-                <div className="flex flex-wrap items-start justify-between gap-3">
-                  <div>
-                    <span className="rounded-full border border-brand/20 bg-brand-dim px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-brand-light">
-                      {exp.label}
-                    </span>
-                    <h3 className="mt-3 text-base font-semibold text-zinc-900">{exp.role}</h3>
-                    <p className="text-sm text-zinc-600">{exp.company}</p>
-                  </div>
-                  <time className="font-mono text-xs text-zinc-500">{exp.timeframe}</time>
-                </div>
-                {exp.tags?.length ? (
-                  <div className="mt-4 flex flex-wrap gap-1.5">
-                    {exp.tags.map((tag) => (
-                      <EngineeringTag key={tag} label={tag} />
-                    ))}
-                  </div>
-                ) : null}
-                <ul className="mt-3 space-y-2">
-                  {exp.highlights.map((point) => (
-                    <li key={point} className="text-[16px] leading-relaxed text-zinc-600">
-                      {point}
-                    </li>
+              <div className="flex flex-col">
+                <p className="text-[13px] font-sans font-bold text-zinc-500 group-hover:text-brand transition-colors">
+                  {item.timeframe}
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-3">
+                <h3 className="font-display text-xl md:text-2xl font-bold tracking-tight text-white">
+                  {item.company}
+                </h3>
+                <p className="text-[12px] font-sans font-semibold uppercase tracking-[0.15em] text-zinc-400">
+                  {item.role}
+                </p>
+                <div className="mt-4 flex flex-col gap-2">
+                  {item.highlights.filter(Boolean).map((highlight, i) => (
+                    <p key={i} className="text-[14px] md:text-[15px] leading-relaxed text-zinc-300 font-medium">
+                      {highlight}
+                    </p>
                   ))}
-                </ul>
-              </SpotlightCard>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );
