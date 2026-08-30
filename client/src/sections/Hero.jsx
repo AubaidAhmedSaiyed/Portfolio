@@ -6,8 +6,9 @@ export default function Hero() {
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
         
         {/* Left Content */}
-        <div className="flex-1 w-full order-2 lg:order-1">
-          <div className="flex flex-wrap items-center gap-4 mb-6">
+        <div className="flex-1 w-full order-2 lg:order-1 flex flex-col items-start">
+          
+          <div className="mb-8">
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-600 font-sans text-[11px] font-bold uppercase tracking-widest shadow-sm">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -15,25 +16,25 @@ export default function Hero() {
               </span>
               Open to Internships
             </div>
-            
-            <div className="font-sans text-[11px] font-bold tracking-[0.2em] uppercase text-themeMuted flex items-center gap-3">
-              <span>{siteMeta.role}</span>
-              <span className="w-1.5 h-1.5 bg-themeMuted rounded-full"></span>
-              <span>2028</span>
-            </div>
           </div>
           
-          <h1 className="font-serif text-5xl md:text-6xl lg:text-[72px] text-themeInk leading-[1.05] mb-8">
-            Some problems<br/>
-            are worth sitting with.
-          </h1>
-          
-          <div className="inline-block bg-themeCard border border-themeBorder px-5 py-2.5 rounded-lg font-sans text-[12px] font-bold tracking-[0.15em] uppercase text-themeAccent mb-8 shadow-sm">
-            Understanding them is where building begins.
+          {/* Blockquote Style Heading */}
+          <div className="border-l-[4px] border-themeInk pl-6 md:pl-8 mb-10 py-1">
+            <h1 className="font-serif text-5xl md:text-6xl lg:text-[72px] text-themeInk leading-[1.1] tracking-tight mb-4">
+              Some problems are worth sitting with.
+            </h1>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-[56px] text-themeMuted leading-[1.1] italic tracking-tight">
+              Understanding them is where building begins.
+            </h2>
           </div>
           
-          <p className="font-sans text-[17px] md:text-[18px] text-themeMuted leading-relaxed max-w-[540px] mb-10 font-medium">
-            I am a B.Tech IT student graduating in 2028, exploring how technology can solve <span className="text-themeInk font-semibold">real-world problems</span> through user-centric solutions with a growing focus on <span className="text-themeInk font-semibold">web engineering</span>, <span className="text-themeInk font-semibold">backend infrastructure</span>, <span className="text-themeInk font-semibold">AI/ML</span>, and systems that scale without losing their human purpose.
+          {/* Name Label (No Dashes) */}
+          <div className="font-sans text-[12px] font-bold tracking-[0.2em] uppercase text-themeMuted mb-6">
+            AUBAID AHMED SAIYED
+          </div>
+          
+          <p className="font-sans text-[17px] md:text-[19px] text-themeMuted leading-relaxed max-w-[580px] mb-10 font-medium">
+            Full-stack developer focused on <span className="text-themeInk font-bold">web engineering</span>, <span className="text-themeInk font-bold">backend infrastructure</span>, and <span className="text-themeInk font-bold">AI/ML</span> — building systems that scale without losing their human purpose.
           </p>
 
           <div className="flex flex-wrap gap-4">
@@ -42,7 +43,7 @@ export default function Hero() {
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
             <a href={siteMeta.resume} target="_blank" rel="noreferrer" className="flex items-center gap-3 bg-themeSurface border border-themeBorder text-themeInk px-6 py-3.5 rounded-lg font-sans text-[14px] font-bold shadow-sm hover:border-themeMuted transition-colors">
-              Résumé PDF
+              Resume PDF
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
             </a>
           </div>
