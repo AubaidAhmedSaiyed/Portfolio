@@ -18,9 +18,19 @@ export default function Projects() {
     <section id="work" className="pt-12 pb-16 relative">
       
       {/* Header */}
-      <div className="flex justify-between items-end mb-8">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
         <div className="font-sans text-[10px] font-bold tracking-[0.2em] uppercase text-[#888E84]">
           All Projects ({projects.length})
+        </div>
+        
+        {/* Capability Strip */}
+        <div className="flex flex-wrap gap-2">
+          {['Backend Systems', 'AI/ML', 'Data Engineering', 'Problem Solving'].map(cap => (
+            <span key={cap} className="bg-themeSurface border border-themeBorder text-themeInk px-3 py-1.5 rounded-full font-sans text-[10px] font-bold tracking-wide uppercase shadow-sm flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-themeAccent"></span>
+              {cap}
+            </span>
+          ))}
         </div>
       </div>
 
@@ -30,9 +40,9 @@ export default function Projects() {
           <div 
             key={project.id} 
             onClick={() => setSelected(project)}
-            className="bg-themeSurface border border-themeBorder rounded-2xl p-4 flex flex-col shadow-sm group hover:shadow-md transition-all cursor-pointer hover:-translate-y-1"
+            className={`bg-themeSurface border rounded-2xl p-4 flex flex-col shadow-sm group hover:shadow-md transition-all cursor-pointer hover:-translate-y-1 ${project.featured ? 'border-themeAccent/40 ring-1 ring-themeAccent/10 md:col-span-2 lg:col-span-2' : 'border-themeBorder'}`}
           >
-            <div className="w-full aspect-[1.6/1] bg-themeCard rounded-xl mb-6 overflow-hidden relative">
+            <div className={`w-full bg-themeCard rounded-xl mb-6 overflow-hidden relative ${project.featured ? 'aspect-[2/1] md:aspect-[2.5/1]' : 'aspect-[1.6/1]'}`}>
                {project.preview ? (
                  <img src={project.preview} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                ) : (
@@ -47,25 +57,46 @@ export default function Projects() {
                </div>
             </div>
             
-            <div className="px-2 flex-1 flex flex-col pt-3">
+            <div className="px-2 flex-1 flex flex-col pt-1 md:pt-3">
               <h3 className="font-serif text-2xl font-bold text-themeInk mb-3 group-hover:text-themeAccent transition-colors">
                 {project.title}
               </h3>
               
-              <p className="font-sans text-[14px] md:text-[15px] text-themeMuted leading-relaxed font-semibold mb-6 flex-1 line-clamp-3">
+              <p className="font-sans text-[14px] md:text-[15px] text-themeMuted leading-relaxed font-semibold mb-5 flex-1 line-clamp-3">
                 {project.description}
               </p>
+
+              {/* VERIFIABLE PROOF SECTION */}
+              {project.featured && project.metrics ? (
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6 p-4 bg-themeCard border border-themeBorder rounded-xl">
+                  {project.metrics.map(m => (
+                    <div key={m.label} className="flex flex-col">
+                      <span className="font-serif text-2xl md:text-3xl font-bold text-themeInk tracking-tight">{m.value}</span>
+                      <span className="font-sans text-[9px] md:text-[10px] font-bold tracking-[0.15em] uppercase text-themeMuted mt-1">{m.label}</span>
+                    </div>
+                  ))}
+                </div>
+              ) : project.proofs ? (
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.proofs.slice(0, 2).map((proof, i) => (
+                    <span key={i} className="inline-flex items-center gap-1.5 bg-themeBg border border-themeBorder text-themeInk px-2.5 py-1 rounded-md font-sans text-[11px] font-bold">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-themeAccent"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      {proof}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
               
               <div className="flex justify-between items-center mt-auto">
                 <div className="flex flex-wrap gap-2">
-                  {project.tech.slice(0, 3).map(t => (
-                    <span key={t} className="bg-themeBg border border-themeBorder text-themeInk px-2.5 py-1 rounded text-[11px] font-bold uppercase tracking-wider">
+                  {project.tech.slice(0, 4).map(t => (
+                    <span key={t} className="bg-themeBg border border-themeBorder text-themeInk px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
                       {t}
                     </span>
                   ))}
-                  {project.tech.length > 3 && (
-                    <span className="bg-themeBg border border-themeBorder text-themeInk px-2.5 py-1 rounded text-[11px] font-bold uppercase tracking-wider">
-                      +{project.tech.length - 3}
+                  {project.tech.length > 4 && (
+                    <span className="bg-themeBg border border-themeBorder text-themeInk px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
+                      +{project.tech.length - 4}
                     </span>
                   )}
                 </div>

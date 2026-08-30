@@ -1,14 +1,33 @@
 export const projects = [
   {
+    id: 'stacklens',
+    title: 'StackLens',
+    description: 'Static code analysis engine that parses JavaScript and TypeScript repositories to construct dependency graphs and compute change impact across large-scale codebases.',
+    summary: 'Repo analysis engine built with Node.js and React that analyzes GitHub repositories through AST traversal, processing repositories with 1,400+ files and 1,495+ dependency relationships. The system constructs dependency graphs, performs impact analysis using graph algorithms, detects architectural issues such as circular dependencies and dead code, and visualizes repository structure through an interactive graph interface.',
+    preview: '/projects/stacklen.png',
+    tech: ['Node.js', 'React', 'JavaScript', 'TypeScript', 'AST', 'Graph Algorithms', 'React Flow', 'GitHub API'],
+    proofs: ['AST-based static analysis', '1,495+ dependency edges mapped', '1,400+ files processed'],
+    features: [
+      'Analyzes large-scale repositories containing 1,400+ source files and 1,495+ dependency edges',
+      'Parses JavaScript and TypeScript codebases using AST traversal to extract dependency relationships',
+      'Constructs dependency graphs using adjacency-list representations for O(V+E) graph traversal operations',
+      'Computes downstream impact analysis using BFS to identify modules affected by code modifications',
+      'Detects circular dependencies using DFS-based graph traversal algorithms',
+      'Identifies orphaned and potentially unused modules through dependency relationship analysis',
+      'Visualizes repository architecture and dependency paths through an interactive graph interface'
+    ],
+    github: 'https://github.com/AubaidAhmedSaiyed/StackLens',
+    demo: 'https://stack-lens-crbi.vercel.app/'
+  },
+  {
     id: 'vector-ai',
     title: 'Vector AI',
     featured: true,
-    description:
-      'Retail intelligence platform that unifies demand forecasting, inventory optimisation, and store operations in one workflow.',
-    summary:
-      'Built with React, Express, MongoDB Atlas, FastAPI, Redis, and XGBoost — surfacing forecast-driven procurement decisions, EOQ analytics, and staff task lists backed by a cached multi-SKU pipeline.',
+    description: 'Retail intelligence platform that unifies demand forecasting, inventory optimisation, and store operations in one workflow.',
+    summary: 'Built with React, Express, MongoDB Atlas, FastAPI, Redis, and XGBoost — surfacing forecast-driven procurement decisions, EOQ analytics, and staff task lists backed by a cached multi-SKU pipeline.',
     preview: '/projects/vector-ai.png',
     tech: ['React', 'Node.js', 'Express', 'MongoDB Atlas', 'FastAPI', 'Redis', 'Python', 'XGBoost'],
+    proofs: ['Zero failures under load testing (K6)', 'XGBoost demand forecasting'],
     features: [
       'XGBoost demand forecasting with Zero-Shot AI from stock snapshots',
       'EOQ-based inventory optimisation and automated expiry alerts',
@@ -18,25 +37,22 @@ export const projects = [
       'Redis caching layer with MongoDB Atlas replication',
     ],
     metrics: [
-      { label: 'MAPE', value: '17%' },
-      { label: 'MAE', value: '2.38' },
-      { label: 'RMSE', value: '2.82' },
-      { label: 'Accuracy', value: '83%' },
+      { label: 'Forecast Accuracy', value: '83%' },
+      { label: 'MAPE Score', value: '17%' },
+      { label: 'MAE Error', value: '2.38' },
     ],
-    impact:
-      'K6 load testing with zero request failures under production-level traffic.',
+    impact: 'K6 load testing with zero request failures under production-level traffic.',
     github: 'https://github.com/AubaidAhmedSaiyed/VectorAI-v2',
     demo: 'https://vector-ai-one-pi.vercel.app/',
   },
   {
     id: 'safe-stay',
     title: 'Safe Stay',
-    description:
-      'Emergency shelter platform connecting evacuees with hosts and administrators through role-based dashboards and moderated listings.',
-    summary:
-      'MERN application with JWT authentication, Multer uploads, and separate flows for evacuees searching shelters, hosts managing availability, and admins approving listings and user access.',
+    description: 'Emergency shelter platform connecting evacuees with hosts and administrators through role-based dashboards and moderated listings.',
+    summary: 'MERN application with JWT authentication, Multer uploads, and separate flows for evacuees searching shelters, hosts managing availability, and admins approving listings and user access.',
     preview: '/projects/safe-stay.png',
     tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Multer', 'Axios', 'React Router'],
+    proofs: ['Role-based access across 3 user types', 'JWT Authentication'],
     features: [
       'Shelter search, filtering, and booking request system for evacuees',
       'Host listing management with image uploads and availability controls',
@@ -51,12 +67,11 @@ export const projects = [
   {
     id: 'expense-tracker',
     title: 'Expense Tracker Web App',
-    description:
-      'Personal finance dashboard with category analytics, live currency conversion, and polished loading, empty, and error states.',
-    summary:
-      'React dashboard with LocalStorage persistence, Recharts visualisations, and live FX rates via Frankfurter and Open ER — built as an internship deliverable with accessible interaction patterns.',
+    description: 'Personal finance dashboard with category analytics, live currency conversion, and polished loading, empty, and error states.',
+    summary: 'React dashboard with LocalStorage persistence, Recharts visualisations, and live FX rates via Frankfurter and Open ER — built as an internship deliverable with accessible interaction patterns.',
     preview: '/projects/expense-tracker.png',
     tech: ['React.js', 'Tailwind CSS', 'Recharts', 'LocalStorage', 'External APIs'],
+    proofs: ['Live FX rates via external APIs', 'LocalStorage data persistence'],
     features: [
       'Expense CRUD with category validation, toasts, and quick-delete actions',
       'Analytics: totals, averages, top category, and monthly spend insights',
@@ -71,12 +86,11 @@ export const projects = [
   {
     id: 'tour-companion',
     title: 'Tour Companion + Agency Platform',
-    description:
-      'Travel booking ecosystem for discovering tour packages, submitting validated reservations, and managing content through an agency admin panel.',
-    summary:
-      'Dual-sided platform with a user-facing discovery and booking experience and a PHP + MySQL admin system for packages, users, subscriptions, and platform content.',
+    description: 'Travel booking ecosystem for discovering tour packages, submitting validated reservations, and managing content through an agency admin panel.',
+    summary: 'Dual-sided platform with a user-facing discovery and booking experience and a PHP + MySQL admin system for packages, users, subscriptions, and platform content.',
     preview: '/projects/tour-companion.png',
     tech: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL', 'Responsive UI'],
+    proofs: ['Dual-sided PHP/MySQL ecosystem'],
     features: [
       'Tour package browsing, discovery, and detail exploration flows',
       'Booking system with server-side validation and status tracking',
@@ -89,58 +103,22 @@ export const projects = [
     demo: '#',
   },
   {
-  id: 'transaction-reconciliation-engine',
-  title: 'Transaction Reconciliation Engine',
-  description:
-    'Backend system that reconciles user-reported and exchange-exported financial transactions from CSV data using configurable matching rules and tolerance-based logic.',
-  summary:
-    'Scalable reconciliation pipeline built with Node.js and MongoDB that ingests raw CSV transactions, normalizes inconsistent financial data, and matches records using rule-based tolerance logic while preserving full audit trail and lineage.',
-  preview: '/projects/image.png',
-  tech: ['Node.js', 'MongoDB', 'JavaScript', 'REST APIs', 'CSV Processing', 'Data Engineering'],
-  features: [
-    'Ingestion of messy user and exchange CSV transaction data with validation and storage',
-    'Normalization layer for standardizing asset names and transaction types across systems',
-    'Rule-based matching engine using timestamp and quantity tolerance thresholds',
-    'Optimized candidate filtering using indexed lookups and normalized keys',
-    'Classification of transactions into matched, unmatched, and conflicting categories',
-    'Structured reconciliation report generation in CSV format with full traceability',
-    'REST APIs for triggering reconciliation runs and retrieving reports and summaries'
-  ],
-  github: 'https://github.com/AubaidAhmedSaiyed/Transaction_Reconciliation',
-},
-{
-  id: 'stacklens',
-  title: 'StackLens',
-  description:
-    'Static code analysis engine that parses JavaScript and TypeScript repositories to construct dependency graphs and compute change impact across large-scale codebases.',
-
-  summary:
-    'Repo analysis engine built with Node.js and React that analyzes GitHub repositories through AST traversal, processing repositories with 1,400+ files and 1,495+ dependency relationships. The system constructs dependency graphs, performs impact analysis using graph algorithms, detects architectural issues such as circular dependencies and dead code, and visualizes repository structure through an interactive graph interface.',
-
-  preview: '/projects/stacklen.png',
-
-  tech: [
-    'Node.js',
-    'React',
-    'JavaScript',
-    'TypeScript',
-    'AST',
-    'Graph Algorithms',
-    'React Flow',
-    'GitHub API'
-  ],
-
-  features: [
-    'Analyzes large-scale repositories containing 1,400+ source files and 1,495+ dependency edges',
-    'Parses JavaScript and TypeScript codebases using AST traversal to extract dependency relationships',
-    'Constructs dependency graphs using adjacency-list representations for O(V+E) graph traversal operations',
-    'Computes downstream impact analysis using BFS to identify modules affected by code modifications',
-    'Detects circular dependencies using DFS-based graph traversal algorithms',
-    'Identifies orphaned and potentially unused modules through dependency relationship analysis',
-    'Visualizes repository architecture and dependency paths through an interactive graph interface'
-  ],
-
-  github: 'https://github.com/AubaidAhmedSaiyed/StackLens',
-  demo: 'https://stack-lens-crbi.vercel.app/'
-}
+    id: 'transaction-reconciliation-engine',
+    title: 'Transaction Reconciliation Engine',
+    description: 'Backend system that reconciles user-reported and exchange-exported financial transactions from CSV data using configurable matching rules and tolerance-based logic.',
+    summary: 'Scalable reconciliation pipeline built with Node.js and MongoDB that ingests raw CSV transactions, normalizes inconsistent financial data, and matches records using rule-based tolerance logic while preserving full audit trail and lineage.',
+    preview: '/projects/image.png',
+    tech: ['Node.js', 'MongoDB', 'JavaScript', 'REST APIs', 'CSV Processing', 'Data Engineering'],
+    proofs: ['Tolerance-based matching engine', 'Configurable pipeline reconciliation'],
+    features: [
+      'Ingestion of messy user and exchange CSV transaction data with validation and storage',
+      'Normalization layer for standardizing asset names and transaction types across systems',
+      'Rule-based matching engine using timestamp and quantity tolerance thresholds',
+      'Optimized candidate filtering using indexed lookups and normalized keys',
+      'Classification of transactions into matched, unmatched, and conflicting categories',
+      'Structured reconciliation report generation in CSV format with full traceability',
+      'REST APIs for triggering reconciliation runs and retrieving reports and summaries'
+    ],
+    github: 'https://github.com/AubaidAhmedSaiyed/Transaction_Reconciliation',
+  },
 ];
