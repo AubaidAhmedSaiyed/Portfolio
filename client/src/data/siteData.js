@@ -16,7 +16,6 @@ export const siteMeta = {
     'AI / ML',
     'Problem Solving',
     'Entrepreneurship',
-    'Nature-inspired Design',
     'Web Engineering',
     'System Design',
   ],

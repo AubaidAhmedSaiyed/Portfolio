@@ -140,6 +140,7 @@ export const projects = [
     'Visualizes repository architecture and dependency paths through an interactive graph interface'
   ],
 
-  github: 'https://github.com/AubaidAhmedSaiyed/StackLens'
+  github: 'https://github.com/AubaidAhmedSaiyed/StackLens',
+  demo: 'https://stack-lens-crbi.vercel.app/'
 }
 ];

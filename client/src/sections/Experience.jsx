@@ -1,54 +1,68 @@
 import { motion } from 'framer-motion';
-import SectionHeading from '../components/SectionHeading';
-import SpotlightCard from '../components/SpotlightCard';
-import EngineeringTag from '../components/EngineeringTag';
-import SectionDivider from '../components/SectionDivider';
 import { experienceItems } from '../data/experience';
 
 const Experience = () => {
   return (
-    <section id="experience" className="section-panel relative">
-      <SectionDivider />
-      <div className="layout-wide mt-8">
-        <SectionHeading eyebrow="Experience" title="Open source and project work in the field." />
-        <div className="space-y-5">
+    <section id="experience" className="relative w-full py-[10vw] bg-themeBg border-t border-themeBorder">
+      <div className="layout-wide">
+        
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-[30px] mb-[60px]">
+          <div>
+            <div className="flex items-center gap-[14px] mb-[20px]">
+              <span className="w-[34px] h-[1px] bg-themeAccent"></span>
+              <span className="font-mono text-[11.5px] tracking-[0.18em] text-themeAccent uppercase">
+                Experience
+              </span>
+            </div>
+            <h2 className="font-serif font-medium text-[clamp(2.4rem,4.5vw,4rem)] leading-[1.1] tracking-[-0.01em] text-themeIvory">
+              Professional<br />trajectory.
+            </h2>
+          </div>
+        </div>
+
+        <div className="flex flex-col">
           {experienceItems.map((exp, index) => (
             <motion.div
-              key={exp.role}
-              initial={{ opacity: 0, y: 14 }}
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.12 }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="grid grid-cols-1 md:grid-cols-[200px_1fr] lg:grid-cols-[240px_1fr] gap-[20px] md:gap-[40px] py-[40px] border-t border-themeBorder group"
             >
-              <SpotlightCard className="rounded-2xl border border-brand/12 bg-matte-elevated p-5 md:p-6 shadow-sm">
-                <div className="flex flex-wrap items-start justify-between gap-3">
-                  <div>
-                    <span className="rounded-full border border-brand/20 bg-brand-dim px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-brand-light">
-                      {exp.label}
-                    </span>
-                    <h3 className="mt-3 text-base font-semibold text-zinc-900">{exp.role}</h3>
-                    <p className="text-sm text-zinc-600">{exp.company}</p>
-                  </div>
-                  <time className="font-mono text-xs text-zinc-500">{exp.timeframe}</time>
+              <div className="flex flex-col">
+                <p className="font-mono text-[13px] tracking-[0.1em] text-themeMuted group-hover:text-themeAccent transition-colors">
+                  {exp.timeframe}
+                </p>
+                {exp.label && (
+                  <span className="mt-[12px] inline-block w-fit px-[8px] py-[4px] border border-themeAccent/30 text-themeAccent text-[9px] font-mono uppercase tracking-widest rounded-[2px]">
+                    {exp.label}
+                  </span>
+                )}
+              </div>
+
+              <div className="flex flex-col gap-[16px]">
+                <div>
+                  <h3 className="font-serif text-[1.8rem] md:text-[2.2rem] text-themeIvory mb-[6px] leading-[1.2]">
+                    {exp.company}
+                  </h3>
+                  <p className="font-mono text-[12px] tracking-[0.1em] text-themePale uppercase">
+                    {exp.role}
+                  </p>
                 </div>
-                {exp.tags?.length ? (
-                  <div className="mt-4 flex flex-wrap gap-1.5">
-                    {exp.tags.map((tag) => (
-                      <EngineeringTag key={tag} label={tag} />
-                    ))}
-                  </div>
-                ) : null}
-                <ul className="mt-3 space-y-2">
-                  {exp.highlights.map((point) => (
-                    <li key={point} className="text-[16px] leading-relaxed text-zinc-600">
-                      {point}
+                
+                <ul className="flex flex-col gap-[12px] mt-[8px]">
+                  {exp.highlights.filter(Boolean).map((highlight, i) => (
+                    <li key={i} className="font-sans font-light text-[15px] leading-[1.7] text-themeMuted max-w-[60ch]">
+                      {highlight}
                     </li>
                   ))}
                 </ul>
-              </SpotlightCard>
+              </div>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );
