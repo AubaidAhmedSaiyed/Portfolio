@@ -21,47 +21,57 @@ export default function JourneyContact() {
           </svg>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between gap-12 mb-16 relative z-10">
-          <div className="flex-1">
-            <div className="font-sans text-[11px] font-bold tracking-[0.2em] uppercase text-blue-600 mb-6">
-              Let's Connect
+        {/* Footer Content */}
+        <div className="relative z-10 w-full flex flex-col pt-24 pb-4 min-h-[50vh] justify-between">
+          
+          {/* Main CTA */}
+          <div className="flex flex-col items-center text-center px-4 mb-20 max-w-4xl mx-auto">
+            <div className="font-sans text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 mb-6 bg-white/40 px-4 py-2 rounded-full border border-slate-200/40 shadow-sm backdrop-blur-sm">
+              Ready to collaborate?
             </div>
-            <h2 className="font-serif text-4xl md:text-5xl text-slate-900 leading-[1.1] max-w-sm mb-6">
-              Let's build something together.
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-slate-900 leading-[1.05] mb-6 drop-shadow-sm tracking-tight">
+              Let's build something<br />meaningful together.
             </h2>
+            <p className="font-sans text-[14px] md:text-[15px] text-slate-600 max-w-xl mx-auto mb-10 drop-shadow-sm font-semibold">
+              I'm currently looking for new opportunities and my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+            </p>
+            
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <a href={`mailto:${siteMeta.email}`} className="flex items-center gap-3 bg-white/90 backdrop-blur-sm border border-blue-200 text-slate-900 px-5 py-3 rounded-xl font-sans text-[13px] font-bold shadow-sm hover:border-blue-400 transition-colors">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                Email
+              </a>
+              <a href={siteMeta.github} target="_blank" rel="noreferrer" className="flex items-center gap-3 bg-white/90 backdrop-blur-sm border border-blue-200 text-slate-900 px-5 py-3 rounded-xl font-sans text-[13px] font-bold shadow-sm hover:border-blue-400 transition-colors">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                GitHub
+              </a>
+              <a href={siteMeta.linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-3 bg-white/90 backdrop-blur-sm border border-blue-200 text-slate-900 px-5 py-3 rounded-xl font-sans text-[13px] font-bold shadow-sm hover:border-blue-400 transition-colors">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                LinkedIn
+              </a>
+              <a href={siteMeta.twitter} target="_blank" rel="noreferrer" className="flex items-center gap-3 bg-white/90 backdrop-blur-sm border border-blue-200 text-slate-900 px-5 py-3 rounded-xl font-sans text-[13px] font-bold shadow-sm hover:border-blue-400 transition-colors">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+                X / Twitter
+              </a>
+              <a href={siteMeta.resume} target="_blank" rel="noreferrer" className="flex items-center gap-3 bg-slate-900 text-white px-5 py-3 rounded-xl font-sans text-[13px] font-bold shadow-sm hover:bg-slate-800 transition-colors">
+                Resume PDF
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              </a>
+            </div>
           </div>
           
-          <div className="flex-1 flex items-center justify-start md:justify-center">
-            <p className="font-sans text-[16px] md:text-[18px] text-slate-700 leading-relaxed font-semibold max-w-[320px]">
-              Open to backend and AI internships.<br/>
-              Whether you have a question or a project idea,<br/>
-              my inbox is always open.
-            </p>
+          {/* Footer Bottom */}
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 px-4 md:px-8 pt-8 border-t border-slate-900/10 mt-auto">
+            <div className="flex items-center gap-2 font-serif text-[18px] font-bold text-slate-900">
+              {siteMeta.name} <span className="font-sans text-[12px] text-slate-500 ml-2 font-normal">© {new Date().getFullYear()}</span>
+            </div>
+            <div className="font-sans text-[11px] font-bold uppercase tracking-wider text-slate-400">
+              Built with React & Tailwind
+            </div>
           </div>
+          
         </div>
-
-        <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 relative z-10 mt-auto">
-          <a href={`mailto:${siteMeta.email}`} className="flex items-center gap-3 bg-white/90 backdrop-blur-sm border border-blue-200 text-slate-900 px-6 py-3.5 rounded-xl font-sans text-[14px] font-bold shadow-sm hover:border-blue-400 transition-colors">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-            Email
-          </a>
-          <a href={siteMeta.github} target="_blank" rel="noreferrer" className="flex items-center gap-3 bg-white/90 backdrop-blur-sm border border-blue-200 text-slate-900 px-6 py-3.5 rounded-xl font-sans text-[14px] font-bold shadow-sm hover:border-blue-400 transition-colors">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-            GitHub
-          </a>
-          <a href={siteMeta.linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-3 bg-white/90 backdrop-blur-sm border border-blue-200 text-slate-900 px-6 py-3.5 rounded-xl font-sans text-[14px] font-bold shadow-sm hover:border-blue-400 transition-colors">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-            LinkedIn
-          </a>
-          <a href={siteMeta.twitter} target="_blank" rel="noreferrer" className="flex items-center gap-3 bg-white/90 backdrop-blur-sm border border-blue-200 text-slate-900 px-6 py-3.5 rounded-xl font-sans text-[14px] font-bold shadow-sm hover:border-blue-400 transition-colors">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
-            X / Twitter
-          </a>
-          <a href={siteMeta.resume} target="_blank" rel="noreferrer" className="flex items-center gap-3 bg-slate-900 text-white px-6 py-3.5 rounded-xl font-sans text-[14px] font-bold shadow-sm hover:bg-slate-800 transition-colors">
-            Résumé PDF
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-          </a>
-        </div>
+        
       </div>
     </section>
   );

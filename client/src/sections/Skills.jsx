@@ -14,17 +14,17 @@ export default function Skills() {
       </div>
       
       <div className="relative z-10 flex justify-between items-baseline mb-16">
-        <span className="font-serif text-4xl md:text-5xl font-bold text-themeInk tracking-tight">Skills & Coursework</span>
-        <span className="font-mono text-[11px] text-themeMuted">02</span>
+        <span className="font-serif text-3xl md:text-4xl font-bold text-themeInk tracking-tight">Skills & Coursework</span>
+        <span className="font-mono text-[10px] text-themeMuted">02</span>
       </div>
       
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {skillGroups.map(group => (
-          <div key={group.title} className="bg-themeSurface border border-themeBorder rounded-2xl p-8 shadow-sm">
-            <h3 className="font-serif text-[22px] font-bold text-themeInk mb-6">{group.title}</h3>
-            <ul className="space-y-4">
+          <div key={group.title} className="bg-themeSurface border border-themeBorder rounded-2xl p-6 shadow-sm">
+            <h3 className="font-serif text-[18px] font-bold text-themeInk mb-5">{group.title}</h3>
+            <ul className="space-y-3">
               {group.items.map(item => (
-                <li key={item} className="flex items-center gap-3 font-sans text-[16px] font-semibold text-themeInk">
+                <li key={item} className="flex items-center gap-3 font-sans text-[14px] font-semibold text-themeInk">
                   <span className="w-1.5 h-1.5 rounded-full bg-themeAccent"></span> {item}
                 </li>
               ))}

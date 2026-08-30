@@ -17,18 +17,18 @@ export default function Navbar() {
         
         {/* Center: Links */}
         <div className="hidden lg:flex gap-8 items-center absolute left-1/2 -translate-x-1/2">
-          <a href="#about" className="font-sans text-[15px] font-semibold text-themeMuted hover:text-themeInk transition-colors">About</a>
-          <a href="#work" className="font-sans text-[15px] font-semibold text-themeMuted hover:text-themeInk transition-colors">Projects</a>
-          <a href="#journey" className="font-sans text-[15px] font-semibold text-themeMuted hover:text-themeInk transition-colors">Journey</a>
-          <a href="#skills" className="font-sans text-[15px] font-semibold text-themeMuted hover:text-themeInk transition-colors">Skills</a>
-          <a href="#contact" className="font-sans text-[15px] font-semibold text-themeMuted hover:text-themeInk transition-colors">Contact</a>
+          <a href="#about" className="font-sans text-[14px] font-semibold text-themeMuted hover:text-themeInk transition-colors">About</a>
+          <a href="#work" className="font-sans text-[14px] font-semibold text-themeMuted hover:text-themeInk transition-colors">Projects</a>
+          <a href="#journey" className="font-sans text-[14px] font-semibold text-themeMuted hover:text-themeInk transition-colors">Journey</a>
+          <a href="#skills" className="font-sans text-[14px] font-semibold text-themeMuted hover:text-themeInk transition-colors">Skills</a>
+          <a href="#contact" className="font-sans text-[14px] font-semibold text-themeMuted hover:text-themeInk transition-colors">Contact</a>
         </div>
 
         {/* Right: Actions */}
         <div className="flex items-center gap-4">
-          <a href={siteMeta.resume} target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-themeInk text-themeBg px-6 py-3 rounded-lg font-sans text-[15px] font-bold hover:bg-themeAccent transition-colors shadow-sm">
+          <a href={siteMeta.resume} target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-themeInk text-themeBg px-5 py-2.5 rounded-lg font-sans text-[13px] font-bold hover:bg-themeAccent transition-colors shadow-sm">
             Résumé PDF
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
           </a>
         </div>
 

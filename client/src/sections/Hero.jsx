@@ -20,31 +20,31 @@ export default function Hero() {
           
           {/* Blockquote Style Heading */}
           <div className="border-l-[4px] border-themeInk pl-6 md:pl-8 mb-10 py-1">
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-[72px] text-themeInk leading-[1.1] tracking-tight mb-4">
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-themeInk leading-[1.1] tracking-tight mb-4">
               Some problems are worth sitting with.
             </h1>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-[56px] text-themeMuted leading-[1.1] italic tracking-tight">
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-themeMuted leading-[1.1] italic tracking-tight">
               Understanding them is where building begins.
             </h2>
           </div>
           
           {/* Name Label (No Dashes) */}
-          <div className="font-sans text-[12px] font-bold tracking-[0.2em] uppercase text-themeMuted mb-6">
+          <div className="font-sans text-[11px] font-bold tracking-[0.2em] uppercase text-themeMuted mb-6">
             AUBAID AHMED SAIYED
           </div>
           
-          <p className="font-sans text-[17px] md:text-[19px] text-themeMuted leading-relaxed max-w-[580px] mb-10 font-medium">
+          <p className="font-sans text-[16px] md:text-[17px] text-themeMuted leading-relaxed max-w-[580px] mb-10 font-medium">
             Full-stack developer focused on <span className="text-themeInk font-bold">web engineering</span>, <span className="text-themeInk font-bold">backend infrastructure</span>, and <span className="text-themeInk font-bold">AI/ML</span> — building systems that scale without losing their human purpose.
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <a href="#work" className="flex items-center gap-3 bg-themeInk text-themeBg px-6 py-3.5 rounded-lg font-sans text-[14px] font-bold hover:bg-themeAccent transition-colors">
+            <a href="#work" className="flex items-center gap-3 bg-themeInk text-themeBg px-5 py-3 rounded-lg font-sans text-[13px] font-bold hover:bg-themeAccent transition-colors">
               Selected Work
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
-            <a href={siteMeta.resume} target="_blank" rel="noreferrer" className="flex items-center gap-3 bg-themeSurface border border-themeBorder text-themeInk px-6 py-3.5 rounded-lg font-sans text-[14px] font-bold shadow-sm hover:border-themeMuted transition-colors">
+            <a href={siteMeta.resume} target="_blank" rel="noreferrer" className="flex items-center gap-3 bg-themeSurface border border-themeBorder text-themeInk px-5 py-3 rounded-lg font-sans text-[13px] font-bold shadow-sm hover:border-themeMuted transition-colors">
               Resume PDF
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
             </a>
           </div>
         </div>

@@ -48,23 +48,23 @@ export default function Projects() {
             </div>
             
             <div className="px-2 flex-1 flex flex-col pt-3">
-              <h3 className="font-serif text-3xl font-bold text-themeInk mb-3 group-hover:text-themeAccent transition-colors">
+              <h3 className="font-serif text-2xl font-bold text-themeInk mb-3 group-hover:text-themeAccent transition-colors">
                 {project.title}
               </h3>
               
-              <p className="font-sans text-[16px] md:text-[17px] text-themeMuted leading-relaxed font-semibold mb-6 flex-1 line-clamp-3">
+              <p className="font-sans text-[14px] md:text-[15px] text-themeMuted leading-relaxed font-semibold mb-6 flex-1 line-clamp-3">
                 {project.description}
               </p>
               
               <div className="flex justify-between items-center mt-auto">
                 <div className="flex flex-wrap gap-2">
                   {project.tech.slice(0, 3).map(t => (
-                    <span key={t} className="bg-themeBg border border-themeBorder text-themeInk px-2.5 py-1 rounded text-[12px] font-bold uppercase tracking-wider">
+                    <span key={t} className="bg-themeBg border border-themeBorder text-themeInk px-2.5 py-1 rounded text-[11px] font-bold uppercase tracking-wider">
                       {t}
                     </span>
                   ))}
                   {project.tech.length > 3 && (
-                    <span className="bg-themeBg border border-themeBorder text-themeInk px-2.5 py-1 rounded text-[12px] font-bold uppercase tracking-wider">
+                    <span className="bg-themeBg border border-themeBorder text-themeInk px-2.5 py-1 rounded text-[11px] font-bold uppercase tracking-wider">
                       +{project.tech.length - 3}
                     </span>
                   )}
@@ -86,11 +86,11 @@ export default function Projects() {
             
             {/* Header / Sticky Top */}
             <div className="flex justify-between items-center p-6 md:p-8 border-b border-themeBorder bg-themeSurface">
-              <h2 className="font-serif text-3xl md:text-5xl font-bold text-themeInk">
+              <h2 className="font-serif text-2xl md:text-4xl font-bold text-themeInk">
                 {selected.title}
               </h2>
-              <button onClick={() => setSelected(null)} className="w-12 h-12 rounded-full bg-themeBg border border-themeBorder flex items-center justify-center text-themeInk hover:bg-themeBorder transition-colors shadow-sm">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              <button onClick={() => setSelected(null)} className="w-10 h-10 rounded-full bg-themeBg border border-themeBorder flex items-center justify-center text-themeInk hover:bg-themeBorder transition-colors shadow-sm">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
               </button>
             </div>
 
@@ -99,8 +99,8 @@ export default function Projects() {
               
               {/* Summary */}
               <div className="mb-10">
-                <h3 className="font-sans text-[12px] font-bold tracking-[0.2em] uppercase text-themeAccent mb-4">Overview</h3>
-                <p className="font-sans text-[18px] md:text-[20px] text-themeInk leading-relaxed font-semibold">
+                <h3 className="font-sans text-[11px] font-bold tracking-[0.2em] uppercase text-themeAccent mb-4">Overview</h3>
+                <p className="font-sans text-[16px] md:text-[17px] text-themeInk leading-relaxed font-semibold">
                   {selected.summary || selected.description}
                 </p>
               </div>
@@ -110,8 +110,8 @@ export default function Projects() {
                 <div className="mb-10 p-6 bg-themeCard border border-themeBorder rounded-2xl flex flex-wrap gap-8 md:gap-16">
                   {selected.metrics.map(m => (
                     <div key={m.label}>
-                      <div className="font-serif text-3xl font-bold text-themeInk mb-1">{m.value}</div>
-                      <div className="font-sans text-[11px] font-bold tracking-[0.1em] uppercase text-themeMuted">{m.label}</div>
+                      <div className="font-serif text-2xl font-bold text-themeInk mb-1">{m.value}</div>
+                      <div className="font-sans text-[10px] font-bold tracking-[0.1em] uppercase text-themeMuted">{m.label}</div>
                     </div>
                   ))}
                 </div>
@@ -120,12 +120,12 @@ export default function Projects() {
               {/* Features Array */}
               {selected.features && selected.features.length > 0 && (
                 <div className="mb-10">
-                  <h3 className="font-sans text-[12px] font-bold tracking-[0.2em] uppercase text-themeAccent mb-4">Key Features</h3>
+                  <h3 className="font-sans text-[11px] font-bold tracking-[0.2em] uppercase text-themeAccent mb-4">Key Features</h3>
                   <ul className="space-y-4">
                     {selected.features.map((feature, i) => (
-                      <li key={i} className="flex gap-4 font-sans text-[16px] md:text-[18px] font-medium text-themeMuted leading-relaxed items-start">
+                      <li key={i} className="flex gap-4 font-sans text-[14px] md:text-[15px] font-medium text-themeMuted leading-relaxed items-start">
                         <span className="text-themeAccent mt-1 flex-shrink-0">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
                         </span>
                         <span>{feature}</span>
                       </li>
@@ -139,7 +139,7 @@ export default function Projects() {
                 <h3 className="font-sans text-[11px] font-bold tracking-[0.2em] uppercase text-themeAccent mb-4">Tech Stack</h3>
                 <div className="flex flex-wrap gap-2.5">
                   {selected.tech.map(t => (
-                    <span key={t} className="bg-themeSurface border border-themeBorder text-themeInk px-3 py-1.5 rounded-lg font-sans text-[12px] font-bold uppercase tracking-wide">
+                    <span key={t} className="bg-themeSurface border border-themeBorder text-themeInk px-3 py-1.5 rounded-lg font-sans text-[11px] font-bold uppercase tracking-wide">
                       {t}
                     </span>
                   ))}
