@@ -4,8 +4,8 @@ import Hero from './sections/Hero';
 import About from './sections/About';
 import Projects from './sections/Projects';
 import JourneyContact from './sections/JourneyContact';
-
 import Skills from './sections/Skills';
+import Experience from './sections/Experience';
 
 function HomePage() {
   return (
@@ -26,6 +26,7 @@ function HomePage() {
           <Hero />
           <About />
           <Skills />
+          <Experience />
           <Projects />
           <JourneyContact />
         </main>
