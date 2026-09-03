@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aubaid | Software & Product Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@100;400;500;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ivory: '#F2EFE9',
+                        parchment: '#E8E3D8',
+                        charcoal: '#1C1C1A',
+                        olive: '#7A8072',
+                        clay: '#A68A73',
+                        dustyBlue: '#65737E',
+                        warmBrown: '#8B6B5D',
+                        darkWindow: '#1E1E1E'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    animation: {
+                        'float-slow': 'float 8s ease-in-out infinite',
+                        'float-delayed': 'float 12s ease-in-out 2s infinite',
+                        'float-reverse': 'float-rev 10s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        },
+                        'float-rev': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F2EFE9;
+            color: #1C1C1A;
+            overflow-x: hidden;
+            /* Photographic film grain */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            background-attachment: fixed;
+            scroll-behavior: smooth;
+        }
+
+        /* Digital UI / Browser Window styling */
+        .digital-window {
+            background: rgba(242, 239, 233, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 25px 50px rgba(28, 28, 26, 0.08), 0 0 0 1px rgba(28, 28, 26, 0.02);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .dark-window {
+            background: rgba(30, 30, 30, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
+            color: #F2EFE9;
+        }
+
+        .window-header {
+            display: flex;
+            align-items: center;
+            padding: 10px 16px;
+            border-bottom: 1px solid rgba(28, 28, 26, 0.05);
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .dark-window .window-header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .window-dots {
+            display: flex;
+            gap: 6px;
+        }
+        
+        .window-dots span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(28, 28, 26, 0.2);
+        }
+
+        .dark-window .window-dots span {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Photography placeholder with cinematic grading */
+        .photo-grade {
+            background-color: #D6D0C4;
+            background-image: linear-gradient(to bottom, rgba(166, 138, 115, 0.2), rgba(101, 115, 126, 0.4));
+            mix-blend-mode: multiply;
+        }
+
+        .text-outline {
+            color: transparent;
+            -webkit-text-stroke: 1px #1C1C1A;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-clay selection:text-ivory">
+
+    <nav class="fixed top-0 w-full p-8 flex justify-between items-start z-50 pointer-events-none">
+        <div class="font-serif text-2xl font-medium tracking-wide text-charcoal pointer-events-auto">Aubaid.</div>
+        <div class="flex flex-col items-end space-y-2 pointer-events-auto bg-ivory/50 backdrop-blur-md px-6 py-4 rounded-lg border border-white/40 shadow-sm">
+            <a href="#work" class="font-sans text-[10px] uppercase tracking-[0.2em] font-medium hover:text-clay transition-colors">Work</a>
+            <a href="#thinking" class="font-sans text-[10px] uppercase tracking-[0.2em] font-medium hover:text-clay transition-colors">Thinking</a>
+            <a href="mailto:24dit063@charusat.edu.in" class="font-sans text-[10px] uppercase tracking-[0.2em] font-medium hover:text-clay transition-colors">Contact</a>
+        </div>
+    </nav>
+
+    <section class="relative w-full min-h-[120vh] flex items-center justify-center overflow-hidden pt-20">
+        
+        <div class="absolute top-[20%] left-[20%] w-[40vw] h-[40vw] bg-parchment rounded-full mix-blend-multiply blur-[80px] opacity-60"></div>
+        <div class="absolute bottom-[10%] right-[10%] w-[50vw] h-[50vw] bg-clay rounded-full mix-blend-multiply blur-[120px] opacity-20"></div>
+        <div class="absolute top-[40%] right-[30%] w-[30vw] h-[30vw] bg-dustyBlue rounded-full mix-blend-overlay blur-[100px] opacity-30"></div>
+
+        <div class="absolute top-[15%] right-[10%] w-[40vw] h-[60vh] photo-grade rounded shadow-2xl z-0 -rotate-2 overflow-hidden flex items-end p-6 animate-float-slow">
+            <div class="w-full h-full border border-white/20 absolute inset-0 m-4 rounded-sm"></div>
+            <p class="font-mono text-[9px] text-charcoal/50 uppercase tracking-widest relative z-10 bg-ivory/80 px-2 py-1">Cinematic_Workspace.raw</p>
+        </div>
+
+        <div class="absolute top-[25%] left-[5%] md:left-[10%] w-[85vw] md:w-[28vw] digital-window z-10 rotate-1 animate-float-delayed">
+            <div class="window-header justify-between">
+                <div class="window-dots"><span></span><span></span><span></span></div>
+                <div class="font-mono text-[8px] text-charcoal/40 uppercase tracking-widest">Dashboard_UI_v2</div>
+            </div>
+            <div class="p-6">
+                <div class="w-1/2 h-2 bg-charcoal/10 rounded-full mb-6"></div>
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div class="h-24 bg-white/50 rounded border border-white flex flex-col justify-end p-3">
+                        <div class="w-full h-12 border-b border-l border-olive/30 relative">
+                            <svg class="absolute bottom-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100">
+                                <path d="M0,80 Q30,70 50,40 T100,20" fill="none" stroke="#7A8072" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="h-24 bg-white/50 rounded border border-white flex flex-col gap-2 p-3 justify-center">
+                        <div class="w-3/4 h-1.5 bg-charcoal/20 rounded-full"></div>
+                        <div class="w-1/2 h-1.5 bg-charcoal/10 rounded-full"></div>
+                        <div class="w-full h-1.5 bg-charcoal/10 rounded-full mt-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-[15%] right-[5%] md:right-[15%] w-[90vw] md:w-[26vw] dark-window z-20 -rotate-1 animate-float-reverse">
+            <div class="window-header justify-between">
+                <div class="window-dots"><span></span><span></span><span></span></div>
+                <div class="font-mono text-[8px] text-ivory/40 uppercase tracking-widest">system_arch.rs</div>
+            </div>
+            <div class="p-6 font-mono text-[10px] leading-relaxed text-ivory/80">
+                <span class="text-olive">// Evaluate constraints</span><br>
+                <span class="text-clay">fn</span> <span class="text-ivory">architect_solution</span>(problem: <span class="text-dustyBlue">&Context</span>) -> <span class="text-dustyBlue">System</span> {<br>
+                &nbsp;&nbsp;<span class="text-clay">let</span> boundaries = extract_needs(problem);<br>
+                &nbsp;&nbsp;build(boundaries)<br>
+                }
+            </div>
+        </div>
+
+        <div class="relative z-30 w-full max-w-7xl mx-auto px-6 pointer-events-none flex flex-col justify-center h-full">
+            
+            <div class="mb-8 pointer-events-auto inline-block">
+                <p class="font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium text-charcoal bg-ivory/80 backdrop-blur px-4 py-2 border border-charcoal/10 rounded-full shadow-sm">
+                    Problem Solver &middot; Product Thinking &middot; Software
+                </p>
+            </div>
+            
+            <h1 class="font-serif text-[13vw] md:text-[9vw] leading-[0.85] tracking-tight text-charcoal mix-blend-multiply max-w-5xl">
+                SOME PROBLEMS<br>
+                <span class="italic text-clay relative z-40">ARE WORTH</span><br>
+                <span class="text-outline text-ivory">SITTING WITH.</span>
+            </h1>
+
+            <div class="mt-12 md:mt-24 max-w-sm ml-auto mr-0 md:mr-24 pointer-events-auto bg-ivory/90 backdrop-blur-md p-6 rounded-lg border border-white shadow-xl">
+                <p class="text-sm font-sans text-charcoal/80 leading-relaxed">
+                    I turn messy problems into useful products and reliable digital systems.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="relative w-full bg-[#181816] text-ivory py-32 overflow-hidden border-t border-charcoal/20">
+        
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-olive/10 to-transparent pointer-events-none"></div>
+        <div class="absolute top-1/2 left-[-10%] w-[40vw] h-[40vw] bg-clay/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 flex flex-col md:flex-row items-center gap-16">
+            
+            <div class="w-full md:w-1/2 relative h-[500px]">
+                
+                <div class="absolute inset-0 dark-window p-0 flex flex-col mt-10">
+                    <div class="window-header justify-between">
+                        <div class="window-dots"><span></span><span></span><span></span></div>
+                        <div class="font-mono text-[8px] text-ivory/40">VECTOR_AI_DASHBOARD</div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <h4 class="font-sans text-xs uppercase tracking-widest text-ivory/50 mb-6">Inventory Forecast</h4>
+                        
+                        <div class="w-full flex-grow relative border-b border-l border-ivory/20">
+                            <svg class="absolute bottom-0 left-0 w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100">
+                                <path d="M0,100 L0,70 Q 20,80 40,50 T 80,30 L100,20 L100,100 Z" fill="rgba(166, 138, 115, 0.15)" />
+                                <path d="M0,70 Q 20,80 40,50 T 80,30 L100,20" fill="none" stroke="#A68A73" stroke-width="2" />
+                            </svg>
+                            <div class="absolute top-[25%] left-[75%] w-[1px] h-[75%] bg-ivory/30 border-l border-dashed border-ivory/40"></div>
+                            <div class="absolute top-[15%] left-[65%] bg-white/10 backdrop-blur px-2 py-1 rounded text-[8px] font-mono border border-white/20">EOQ Reached</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="absolute top-0 right-[-5%] digital-window bg-ivory/90 p-6 w-48 shadow-2xl z-20">
+                    <p class="font-sans text-[9px] uppercase tracking-widest text-charcoal/50 mb-2">Model Accuracy</p>
+                    <p class="font-serif text-4xl text-clay mb-1">17%</p>
+                    <p class="font-mono text-[8px] text-charcoal/40 uppercase">MAPE Metric</p>
+                </div>
+
+            </div>
+
+            <div class="w-full md:w-1/2 relative md:pl-12">
+                <div class="mb-12">
+                    <p class="font-mono text-[10px] tracking-[0.3em] text-olive mb-4 border-b border-olive/30 inline-block pb-1">01 &mdash; VECTOR AI</p>
+                    <h2 class="font-serif text-4xl md:text-5xl leading-tight mb-6">Know what you'll need before you run out.</h2>
+                    <p class="font-sans text-lg text-ivory/70 italic">Demand intelligence for small retailers.</p>
+                </div>
+                
+                <p class="font-sans text-sm font-light text-ivory/60 leading-relaxed mb-8 max-w-md">
+                    Retailers don't need complex data science models; they need to know what to order on Tuesday. I engineered an automated pipeline using XGBoost and CSV ingestion to calculate exact Economic Order Quantities.
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                    <span class="border border-ivory/20 rounded-full px-3 py-1 font-mono text-[9px] text-ivory/80 uppercase tracking-widest bg-white/5">Product</span>
+                    <span class="border border-ivory/20 rounded-full px-3 py-1 font-mono text-[9px] text-ivory/80 uppercase tracking-widest bg-white/5">Data</span>
+                    <span class="border border-ivory/20 rounded-full px-3 py-1 font-mono text-[9px] text-ivory/80 uppercase tracking-widest bg-white/5">Machine Learning</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="relative w-full bg-parchment text-charcoal py-32 overflow-hidden border-t border-white/40">
+        
+        <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#1C1C1A 2px, transparent 2px); background-size: 32px 32px;"></div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 flex flex-col md:flex-row-reverse items-center gap-16">
+            
+            <div class="w-full md:w-1/2 relative h-[550px]">
+                
+                <div class="absolute inset-0 digital-window p-0 flex flex-col mb-10">
+                    <div class="window-header justify-between bg-white/60">
+                        <div class="window-dots"><span></span><span></span><span></span></div>
+                        <div class="font-mono text-[8px] text-charcoal/40">STACKLENS_ENGINE</div>
+                    </div>
+                    
+                    <div class="p-6 flex-grow relative bg-white/30">
+                        <div class="mb-8 font-mono text-[9px] text-charcoal/60 leading-relaxed border-l-2 border-dustyBlue pl-4">
+                            const AST = parseCode(repository);<br>
+                            const dependencies = extractImports(AST);<br>
+                            generateStatelessGraph(dependencies);
+                        </div>
+
+                        <div class="absolute bottom-6 right-6 w-3/4 h-1/2 border border-charcoal/5 rounded bg-white/40 p-4 shadow-sm">
+                            <svg class="w-full h-full" viewBox="0 0 200 100" fill="none" stroke="rgba(28, 28, 26, 0.3)" stroke-width="1">
+                                <circle cx="100" cy="20" r="12" fill="rgba(255,255,255,0.8)" stroke="rgba(28,28,26,0.5)" />
+                                <circle cx="50" cy="80" r="10" fill="rgba(255,255,255,0.8)" />
+                                <circle cx="150" cy="80" r="10" fill="rgba(255,255,255,0.8)" />
+                                <circle cx="100" cy="70" r="6" fill="rgba(101,115,126,0.3)" />
+                                <path d="M 94 30 L 56 72" />
+                                <path d="M 106 30 L 144 72" />
+                                <path d="M 100 32 L 100 64" stroke-dasharray="2 2" />
+                            </svg>
+                            <div class="absolute top-2 left-2 font-mono text-[7px] uppercase text-dustyBlue">Dependency Map</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="absolute bottom-0 left-[-5%] dark-window p-5 w-56 shadow-2xl z-20">
+                    <p class="font-sans text-[9px] uppercase tracking-widest text-ivory/50 mb-3 border-b border-white/10 pb-1">Architecture</p>
+                    <ul class="font-mono text-[9px] text-ivory/80 space-y-2">
+                        <li>> Stateless Processing</li>
+                        <li>> Live GitHub API</li>
+                        <li>> Zero-disk storage</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="w-full md:w-1/2 relative md:pr-12">
+                <div class="mb-12">
+                    <p class="font-mono text-[10px] tracking-[0.3em] text-dustyBlue mb-4 border-b border-dustyBlue/30 inline-block pb-1">02 &mdash; STACKLENS</p>
+                    <h2 class="font-serif text-4xl md:text-5xl leading-tight mb-6">Understand a codebase before changing it.</h2>
+                    <p class="font-sans text-lg text-charcoal/70 italic">Codebase intelligence through static analysis.</p>
+                </div>
+                
+                <p class="font-sans text-sm font-light text-charcoal/70 leading-relaxed mb-8 max-w-md">
+                    Before refactoring, you need the map. I built a stateless static analysis tool utilizing AST parsing to map relationships dynamically, processing complex codebases without relying on local disk storage.
+                </p>
+
+                <div class="flex flex-wrap gap-2">
+                    <span class="border border-charcoal/20 rounded-full px-3 py-1 font-mono text-[9px] text-charcoal/80 uppercase tracking-widest bg-white/40">Systems</span>
+                    <span class="border border-charcoal/20 rounded-full px-3 py-1 font-mono text-[9px] text-charcoal/80 uppercase tracking-widest bg-white/40">Developer Tools</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="thinking" class="py-32 bg-ivory overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            
+            <div class="text-center mb-24">
+                <h2 class="font-serif text-4xl md:text-6xl text-charcoal inline-flex items-center gap-4 flex-wrap justify-center">
+                    Understand <span class="font-mono text-sm text-clay/50 px-2">=></span> 
+                    Shape <span class="font-mono text-sm text-olive/50 px-2">=></span> 
+                    Build
+                </h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+                
+                <div class="digital-window p-8 bg-white/60 transform hover:-translate-y-2 transition-transform duration-500">
+                    <div class="font-mono text-4xl text-charcoal/10 absolute top-4 right-4">01</div>
+                    <h3 class="font-serif text-2xl mb-4 text-charcoal">Understand</h3>
+                    <div class="w-8 h-[1px] bg-charcoal/20 mb-6"></div>
+                    <p class="font-sans text-sm font-light text-charcoal/70 leading-relaxed">
+                        Find the real problem. Who has it? Why does it matter? What constraints exist before a single line of code is written?
+                    </p>
+                </div>
+
+                <div class="digital-window p-8 bg-parchment/60 transform md:translate-y-8 hover:translate-y-6 transition-transform duration-500">
+                    <div class="font-mono text-4xl text-charcoal/10 absolute top-4 right-4">02</div>
+                    <h3 class="font-serif text-2xl mb-4 text-charcoal">Shape</h3>
+                    <div class="w-8 h-[1px] bg-charcoal/20 mb-6"></div>
+                    <p class="font-sans text-sm font-light text-charcoal/70 leading-relaxed">
+                        Design what should exist. Define product boundaries and user workflows. Translate ambiguity into software architecture.
+                    </p>
+                </div>
+
+                <div class="dark-window p-8 transform md:translate-y-16 hover:translate-y-14 transition-transform duration-500">
+                    <div class="font-mono text-4xl text-ivory/10 absolute top-4 right-4">03</div>
+                    <h3 class="font-serif text-2xl mb-4 text-ivory">Build</h3>
+                    <div class="w-8 h-[1px] bg-ivory/20 mb-6"></div>
+                    <p class="font-sans text-sm font-light text-ivory/70 leading-relaxed">
+                        Make it reliable. Execute the architecture with precision, managing tradeoffs in databases, APIs, and system design.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="bg-[#1A1A18] text-ivory pt-32 pb-40 relative overflow-hidden">
+        
+        <div class="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] bg-warmBrown/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto px-6 md:px-12 relative z-10 text-center flex flex-col items-center">
+            
+            <div class="w-16 h-16 rounded-full bg-photo-grade border border-white/10 mb-8 shadow-2xl flex items-center justify-center overflow-hidden">
+                <div class="w-full h-full bg-ivory/10 backdrop-blur-sm"></div>
+            </div>
+
+            <p class="font-serif text-3xl md:text-5xl leading-tight mb-8">
+                "I like working where problems meet technology."
+            </p>
+            <p class="font-sans text-sm font-light text-ivory/60 max-w-lg mb-32 leading-relaxed">
+                Software, data, AI and systems are tools. Understanding the problem comes first. I am an IT student focusing on shaping ambiguity into highly functional digital products.
+            </p>
+
+            <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-ivory/20 to-transparent mb-32"></div>
+
+            <h2 class="font-serif text-5xl md:text-7xl italic text-clay mb-12">Have something worth solving?</h2>
+            
+            <div class="flex gap-6 md:gap-10 border border-ivory/20 rounded-full px-8 py-4 bg-white/5 backdrop-blur-md shadow-2xl hover:bg-white/10 transition-colors">
+                <a href="mailto:24dit063@charusat.edu.in" class="font-mono text-[10px] uppercase tracking-[0.2em] hover:text-clay transition-colors flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 bg-clay rounded-full"></span> Email
+                </a>
+                <span class="text-ivory/20">|</span>
+                <a href="#" class="font-mono text-[10px] uppercase tracking-[0.2em] hover:text-clay transition-colors">LinkedIn</a>
+                <span class="text-ivory/20">|</span>
+                <a href="#" class="font-mono text-[10px] uppercase tracking-[0.2em] hover:text-clay transition-colors">GitHub</a>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

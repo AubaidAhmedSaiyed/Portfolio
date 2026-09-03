@@ -1,113 +1,97 @@
-import { siteMeta } from '../data/siteData';
+import { motion } from 'framer-motion';
 
 export default function About() {
   return (
-    <section id="about" className="pt-12 pb-16">
+    <section id="about" className="w-full max-w-[90rem] mx-auto px-4 md:px-8 py-12 md:py-24">
       
-      {/* Top Section */}
-      <div className="flex flex-col md:flex-row gap-12 md:gap-16 mb-16">
-        <div className="flex-1">
-          <div className="font-sans text-[11px] font-bold tracking-[0.2em] uppercase text-themeMuted mb-6">
+      {/* ── MASSIVE CLOUD/ENVIRONMENT BLOCK - DARK MODE ── */}
+      <div className="relative w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden bg-[#0A0A0A] py-24 md:py-48 px-6 flex flex-col items-center text-center shadow-[inset_0_0_100px_rgba(0,0,0,0.8)] border border-white/5">
+        
+        {/* Soft Background Image spanning the entire block */}
+        <img 
+          src="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=2400&auto=format&fit=crop" 
+          alt="Dark Clouds" 
+          className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen pointer-events-none grayscale"
+        />
+        
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/80 via-transparent to-[#050505]/90 pointer-events-none z-0"></div>
+
+        {/* ── PROBLEM SOLVING / ARCHITECTURE BACKGROUND GRAPHIC ── */}
+        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-[0.25] pointer-events-none">
+          <svg width="100%" height="100%" viewBox="0 0 1200 800" fill="none" className="transform scale-150 md:scale-100">
+            <rect x="200" y="200" width="800" height="400" rx="40" stroke="#EDEDED" strokeWidth="2" strokeDasharray="10 10"/>
+            <text x="230" y="240" fontSize="14" fontWeight="bold" fill="#EDEDED" fontFamily="monospace" letterSpacing="0.2em">SYSTEM_ARCHITECTURE_V2</text>
+            
+            <circle cx="200" cy="400" r="10" fill="#EDEDED" />
+            <text x="80" y="405" fontSize="12" fontWeight="bold" fill="#EDEDED" fontFamily="monospace">CLIENT_REQ</text>
+            
+            <circle cx="1000" cy="400" r="10" fill="#EDEDED" />
+            <text x="1030" y="405" fontSize="12" fontWeight="bold" fill="#EDEDED" fontFamily="monospace">DB_WRITE</text>
+            
+            <path d="M 200 400 L 400 400 L 400 250 L 600 250" stroke="#EDEDED" strokeWidth="2" />
+            <text x="250" y="390" fontSize="11" fontWeight="bold" fill="#EDEDED" fontFamily="monospace">API_GATEWAY</text>
+            
+            <path d="M 600 250 L 800 250 L 800 400 L 1000 400" stroke="#EDEDED" strokeWidth="2" />
+            <text x="650" y="240" fontSize="11" fontWeight="bold" fill="#EDEDED" fontFamily="monospace">ML_INFERENCE_ENGINE</text>
+            
+            <path d="M 200 400 L 400 400 L 400 550 L 600 550" stroke="#EDEDED" strokeWidth="2" />
+            <path d="M 600 550 L 800 550 L 800 400 L 1000 400" stroke="#EDEDED" strokeWidth="2" />
+            <text x="650" y="540" fontSize="11" fontWeight="bold" fill="#EDEDED" fontFamily="monospace">DATA_LAKE_SYNC</text>
+            
+            <rect x="550" y="200" width="100" height="100" rx="20" stroke="#EDEDED" strokeWidth="2"/>
+            <rect x="550" y="500" width="100" height="100" rx="20" stroke="#EDEDED" strokeWidth="2"/>
+          </svg>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 w-full max-w-4xl flex flex-col items-center">
+          
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-sans text-[12px] uppercase tracking-[0.15em] text-[#A0A0A0] mb-6"
+          >
             About Me
-          </div>
-          <h2 className="font-serif text-3xl md:text-4xl text-themeInk leading-[1.1] max-w-lg">
-            A software engineering enthusiast, still early, building on purpose anyway.
-          </h2>
-          {/* Tech/Command decorative element */}
-          <div className="mt-8 text-themeMuted opacity-50">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 17l6-6-6-6"></path><path d="M12 19h8"></path></svg>
-          </div>
-        </div>
-        
-        <div className="flex-1 flex flex-col justify-center">
-          <div className="font-sans text-[15px] md:text-[16px] font-medium text-themeMuted leading-relaxed space-y-6 max-w-lg pt-8 md:pt-0">
-            <p>
-              I'm deeply interested in exploring how technology can solve real-world problems through <span className="text-themeInk font-semibold">user-centric solutions</span>, and I aspire to build products that create meaningful impact.
-            </p>
-            <p>
-              My journey includes growing my skills in web engineering and problem-solving with DSA. I'm particularly fascinated by <span className="text-themeInk font-semibold">backend infrastructure systems</span> and AI/ML.
-            </p>
-          </div>
-        </div>
-      </div>
+          </motion.div>
 
-      {/* Bento Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        
-        {/* Card 1: Currently Exploring */}
-        <div className="bg-themeCard rounded-2xl p-8 flex flex-col border border-themeBorder/50">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="w-8 h-8 rounded-full bg-themeAccent text-white flex items-center justify-center shadow-sm">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-            </div>
-            <span className="font-serif text-[16px] md:text-[17px] text-themeInk font-semibold">Currently Exploring</span>
-          </div>
-          <ul className="space-y-4 flex-1">
-            {siteMeta.exploring.map(item => (
-              <li key={item} className="flex items-center gap-3 font-sans text-[13px] md:text-[14px] font-semibold text-themeInk">
-                <span className="w-1.5 h-1.5 rounded-full bg-themeAccent"></span> {item}
-              </li>
-            ))}
-          </ul>
-        </div>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="font-serif text-[2.5rem] md:text-[4rem] text-[#EDEDED] leading-[1.1] tracking-tight mb-8"
+          >
+            Curious by nature. <br className="hidden md:block"/>
+            <span className="italic text-[#CCC]">Consistent by choice.</span>
+          </motion.h2>
 
-        {/* Card 2: Core Strengths */}
-        <div className="bg-themeSurface border border-themeBorder rounded-2xl p-8 flex flex-col shadow-sm">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="w-8 h-8 rounded-full bg-themeAccent text-white flex items-center justify-center shadow-sm">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-            </div>
-            <span className="font-serif text-[16px] md:text-[17px] text-themeInk font-semibold">Core Strengths</span>
-          </div>
-          <ul className="space-y-6 flex-1">
-            <li className="flex gap-4 font-sans text-[13px] md:text-[14px] font-semibold text-themeInk">
-              <span className="text-themeMuted font-mono text-[11px] mt-0.5">01</span>
-              <span>Reliable backend systems built for growth and speed.</span>
-            </li>
-            <li className="flex gap-4 font-sans text-[13px] md:text-[14px] font-semibold text-themeInk">
-              <span className="text-themeMuted font-mono text-[11px] mt-0.5">02</span>
-              <span>Practical AI integration, used where it adds real value.</span>
-            </li>
-            <li className="flex gap-4 font-sans text-[13px] md:text-[14px] font-semibold text-themeInk">
-              <span className="text-themeMuted font-mono text-[11px] mt-0.5">03</span>
-              <span>Clear system design and structured problem-solving.</span>
-            </li>
-          </ul>
-        </div>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="font-sans text-[16px] md:text-[20px] text-[#A0A0A0] leading-relaxed max-w-2xl mb-16 font-medium"
+          >
+            I am a B.Tech IT student graduating in 2028, exploring how technology can solve real-world problems through user-centric solutions with a growing focus on web engineering, backend infrastructure, AI/ML, and systems that scale without losing their human purpose.
+          </motion.p>
 
-        {/* Card 3: Working Style */}
-        <div className="bg-themeSurface border border-themeBorder rounded-2xl p-8 flex flex-col shadow-sm">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="w-8 h-8 rounded-full bg-themeAccent text-white flex items-center justify-center shadow-sm">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-            </div>
-            <span className="font-serif text-[16px] md:text-[17px] text-themeInk font-semibold">Working Style</span>
-          </div>
-          <ul className="space-y-4 flex-1">
-            {['Collaborative', 'Data-driven', 'Detail-oriented', 'Analytical'].map(item => (
-              <li key={item} className="flex items-center gap-3 font-sans text-[13px] md:text-[14px] font-semibold text-themeInk">
-                <span className="w-1.5 h-1.5 rounded-full bg-themeAccent"></span> {item}
-              </li>
-            ))}
-          </ul>
-        </div>
+          {/* User's Real Photo */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="w-[280px] h-[340px] md:w-[320px] md:h-[400px] rounded-[2rem] overflow-hidden shadow-2xl border border-white/10"
+          >
+            <img 
+              src="/photo.jpg" 
+              alt="Aubaid Ahmed" 
+              className="w-full h-full object-cover filter contrast-[1.1] brightness-[0.9]"
+            />
+          </motion.div>
 
-        {/* Card 4: Always Learning */}
-        <div className="bg-gradient-to-br from-themeCard to-themeBg rounded-2xl p-8 flex flex-col relative overflow-hidden border border-themeBorder/50">
-          <div className="flex items-center gap-3 mb-8 relative z-10">
-            <div className="w-8 h-8 rounded-full bg-themeSurface border border-themeBorder flex items-center justify-center text-themeAccent shadow-sm">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg>
-            </div>
-            <span className="font-serif text-[16px] md:text-[17px] text-themeInk font-semibold">Always Learning</span>
-          </div>
-          <div className="font-sans text-[14px] md:text-[15px] font-semibold text-themeInk leading-relaxed relative z-10">
-            Curious by nature.<br/>Consistent by choice.<br/>Building with purpose.
-          </div>
-          {/* Decorative tech/product grid logic */}
-          <div className="absolute bottom-0 right-0 w-32 h-32 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 100% 100%, #334155 0%, transparent 70%)' }}></div>
-          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(to right, #334155 1px, transparent 1px), linear-gradient(to bottom, #334155 1px, transparent 1px)', backgroundSize: '12px 12px' }}></div>
         </div>
-
       </div>
     </section>
   );

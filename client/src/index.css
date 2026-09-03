@@ -2,23 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Base styles to ensure background transitions smoothly */
-html {
-  scroll-behavior: smooth;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-[#050505] text-[#EDEDED] antialiased;
+  }
 }
-
-body {
-  @apply bg-themeBg text-themeInk transition-colors duration-300;
-  font-family: 'Source Sans 3', sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-::selection {
-  background: rgba(44, 58, 79, 0.2);
-}
-
-/* Clean editorial styling overrides if needed */

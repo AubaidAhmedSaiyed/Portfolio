@@ -1,82 +1,92 @@
+import { motion } from 'framer-motion';
 import { experienceItems } from '../data/experience';
 
 export default function Experience() {
   return (
-    <section id="experience" className="pt-24 pb-12 border-b border-themeBorder relative overflow-hidden">
+    <section id="experience" className="relative w-full py-24 md:py-32 px-6 bg-[#050505] overflow-hidden">
       
-      {/* Subtle Vertical Background Wave */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden flex items-center justify-center opacity-40">
-        <svg viewBox="0 0 800 1440" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-full w-auto min-h-[1440px]">
-          <path d="M200 0 C 0 300, 400 600, 200 900 C 0 1200, 200 1440, 200 1440" stroke="#93C5FD" strokeWidth="2.5" />
-          <path d="M250 0 C 50 400, 450 800, 250 1440" stroke="#BFDBFE" strokeWidth="1.5" />
-          <path d="M150 0 C 350 500, -50 1000, 150 1440" stroke="#60A5FA" strokeWidth="2" />
+      {/* ── BACKGROUND UI: VERSION CONTROL / TIMELINE GRAPH - DARK MODE ── */}
+      <div className="absolute inset-0 z-0 flex justify-center pointer-events-none opacity-[0.15]">
+        <svg width="100%" height="100%" viewBox="0 0 800 1200" fill="none" className="transform scale-125 md:scale-100">
+          <line x1="400" y1="0" x2="400" y2="1200" stroke="#EDEDED" strokeWidth="2" strokeDasharray="8 8" />
+          
+          <circle cx="400" cy="150" r="10" fill="#EDEDED" />
+          <text x="430" y="155" fontSize="14" fontWeight="bold" fill="#EDEDED" fontFamily="monospace">INIT_SEQUENCE</text>
+          
+          <path d="M 400 300 C 500 300, 500 400, 500 450" stroke="#EDEDED" strokeWidth="2" fill="none" />
+          <circle cx="500" cy="450" r="8" fill="#EDEDED" />
+          <text x="530" y="455" fontSize="12" fontWeight="bold" fill="#EDEDED" fontFamily="monospace">FEATURE_BRANCH</text>
+
+          <circle cx="400" cy="600" r="14" fill="none" stroke="#EDEDED" strokeWidth="3" />
+          <circle cx="400" cy="600" r="6" fill="#EDEDED" />
+          <text x="440" y="605" fontSize="14" fontWeight="bold" fill="#EDEDED" fontFamily="monospace">MERGE_DEPLOYMENT</text>
+          
+          <path d="M 400 800 C 250 800, 250 900, 250 950" stroke="#EDEDED" strokeWidth="2" fill="none" />
+          <circle cx="250" cy="950" r="8" fill="#EDEDED" />
+          <text x="80" y="955" fontSize="12" fontWeight="bold" fill="#EDEDED" fontFamily="monospace">OPEN_SOURCE_PR</text>
+          
+          <circle cx="400" cy="1100" r="10" fill="#EDEDED" />
+          <text x="430" y="1105" fontSize="14" fontWeight="bold" fill="#EDEDED" fontFamily="monospace">PRODUCTION_LIVE</text>
         </svg>
       </div>
-      
-      <div className="relative z-10 flex justify-between items-baseline mb-20">
-        <span className="font-serif text-3xl md:text-4xl font-bold text-themeInk tracking-tight">Experience & Growth</span>
-        <span className="font-mono text-[10px] text-themeMuted">03</span>
-      </div>
-      
-      <div className="relative z-10 max-w-4xl mx-auto">
-        {/* Timeline Line */}
-        <div className="relative border-l border-themeBorder/60 ml-[80px] md:ml-[140px]">
-          
-          {experienceItems.map((exp, index) => (
-            <div key={index} className="relative pl-8 md:pl-16 mb-20 last:mb-0">
+
+      <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-24 text-center bg-[#111]/80 backdrop-blur-md px-12 py-6 rounded-3xl border border-white/10"
+        >
+          <div className="font-sans text-[12px] text-[#A0A0A0] uppercase tracking-[0.1em] mb-4 font-bold">
+            Journey
+          </div>
+          <h2 className="font-serif text-[3rem] md:text-[4.5rem] text-[#EDEDED] leading-[1.05] tracking-tight">
+            Professional <span className="italic text-[#CCC]">Experience.</span>
+          </h2>
+        </motion.div>
+
+        <div className="w-full flex flex-col gap-12">
+          {experienceItems.map((item, index) => (
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="bg-[#111]/90 backdrop-blur-xl rounded-[2rem] p-8 md:p-12 border border-white/10 shadow-lg flex flex-col md:flex-row gap-8 md:gap-16 items-start hover:border-white/20 transition-colors"
+            >
               
-              {/* Timeline Dot */}
-              <span className="absolute top-2 -left-[5px] w-[9px] h-[9px] rounded-full bg-themeBorder border-2 border-themeBg"></span>
-              
-              {/* Date (Left of timeline) */}
-              <div className="absolute top-0.5 -left-[96px] md:-left-[164px] w-[70px] md:w-[100px] text-right font-sans text-[13px] md:text-[14px] font-semibold text-themeMuted">
-                {exp.timeframe}
-              </div>
-              
-              {/* Pill / Label */}
-              {exp.label && (
-                <div className="inline-block border border-themeBorder/80 rounded-full px-3 py-1 mb-4 shadow-sm bg-themeSurface">
-                  <span className="font-sans text-[9px] md:text-[10px] font-bold tracking-[0.15em] uppercase text-themeInk">
-                    {exp.label}
-                  </span>
-                </div>
-              )}
-              
-              {/* Role & Company */}
-              <h3 className="font-serif text-2xl md:text-3xl font-bold text-themeInk mb-2 leading-tight">
-                {exp.role}
-              </h3>
-              <div className="font-sans text-[15px] md:text-[16px] font-semibold text-themeMuted mb-6">
-                @ {exp.company}
-              </div>
-              
-              {/* Highlights List */}
-              <ul className="space-y-4 mb-6 max-w-[650px]">
-                {exp.highlights.filter(Boolean).map((highlight, i) => (
-                  <li key={i} className="flex gap-4 font-sans text-[15px] md:text-[16px] font-medium text-themeInk leading-relaxed">
-                    <span className="text-themeMuted mt-1.5 flex-shrink-0">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    </span>
-                    <span>{highlight}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              {/* Tags/Pills at bottom */}
-              {exp.tags && exp.tags.length > 0 && (
-                <div className="flex flex-wrap gap-2.5">
-                  {exp.tags.map(tag => (
-                    <span key={tag} className="border border-themeBorder/60 bg-themeSurface rounded-full px-3 py-1 font-sans text-[11px] md:text-[12px] font-semibold text-themeMuted hover:text-themeInk hover:border-themeBorder transition-colors shadow-sm">
-                      {tag}
-                    </span>
+              {/* Left Column */}
+              <div className="w-full md:w-[30%] shrink-0">
+                <div className="font-sans text-[12px] font-bold uppercase tracking-[0.1em] text-[#A0A0A0] mb-2">{item.timeframe}</div>
+                <div className="font-serif text-[1.5rem] text-[#EDEDED] leading-tight mb-2">{item.company}</div>
+                <div className="font-sans text-[14px] text-[#888] font-bold mb-6">{item.role}</div>
+                
+                <div className="flex flex-wrap gap-2">
+                  {item.tags.map(tag => (
+                    <span key={tag} className="bg-white/5 px-3 py-1 rounded-full font-sans text-[11px] font-bold text-[#CCC] border border-white/10">{tag}</span>
                   ))}
                 </div>
-              )}
+              </div>
 
-            </div>
+              {/* Right Column */}
+              <div className="w-full md:w-[70%]">
+                <ul className="space-y-4">
+                  {item.highlights.filter(Boolean).map((highlight, i) => (
+                    <li key={i} className="font-sans text-[15px] md:text-[16px] text-[#A0A0A0] font-medium leading-relaxed flex items-start gap-4">
+                      <span className="text-white font-bold mt-1">→</span>
+                      <span>{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+            </motion.div>
           ))}
-
         </div>
+
       </div>
     </section>
   );
