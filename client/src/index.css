@@ -7,6 +7,6 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-[#050505] text-[#EDEDED] antialiased;
+    @apply bg-[#161211] text-[#e8e3e1] antialiased;
   }
 }

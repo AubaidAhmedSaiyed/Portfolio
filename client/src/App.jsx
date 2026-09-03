@@ -10,7 +10,7 @@ import JourneyContact from './sections/JourneyContact';
 // Deep charcoal background, stark white/gray text.
 function HomePage() {
   return (
-    <div className="bg-[#050505] min-h-screen text-[#EDEDED] font-sans selection:bg-white/20 selection:text-white antialiased">
+    <div className="bg-[#161211] min-h-screen text-[#e8e3e1] font-sans selection:bg-white/20 selection:text-white antialiased">
       <main className="w-full flex flex-col items-center">
         <Hero />
         <About />
