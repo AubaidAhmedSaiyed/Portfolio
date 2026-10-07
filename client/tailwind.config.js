@@ -3,21 +3,20 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Satoshi', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        display: ['"Instrument Serif"', 'ui-serif', 'Georgia', 'serif'],
-        serif: ['"Instrument Serif"', 'ui-serif', 'Georgia', 'serif'],
-        mono: ['"IBM Plex Mono"', 'monospace'],
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'ui-serif', 'Georgia', 'serif'],
+        serif: ['Fraunces', 'ui-serif', 'Georgia', 'serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       colors: {
-        // Warm Cinematic & Editorial Palette
-        themeBg: '#F5F2EA',        // Parchment / Warm Ivory
-        themeSurface: '#FCFBF9',   // Cream / Pure Paper
-        themeBorder: '#E5E1D8',    // Subtle warm gray/tan border
-        themeInk: '#262524',       // Charcoal / Soft Black
-        themeMuted: '#7E7A75',     // Warm gray for metadata
-        themeAccent: '#A38B71',    // Warm brown / Soft clay
-        themeOlive: '#7B826B',     // Muted olive
-        themeBlue: '#84949C',      // Dusty blue
+        // Dark Cinematic Palette from the reference HTML
+        themeBg: '#0d0806',
+        themeInk: '#f6e9d8',
+        themeMuted: '#c9b29a',
+        themeAccent: '#e8a35a',
+        themeOk: '#a8d5a2',
+        themeBad: '#f0907f',
+        themeWarn: '#f1cf86',
       },
       maxWidth: {
         content: '72rem',
