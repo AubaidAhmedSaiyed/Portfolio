@@ -105,7 +105,7 @@ const PROJ = [
     ds: 'Retail intelligence platform that unifies demand forecasting, inventory optimisation and store operations in one workflow.',
     pf: ['83% forecast accuracy', '17% MAPE', 'Zero k6 failures'],
     tg: ['AI & ML', 'Node.js', 'FastAPI'],
-    f: ['AI & ML', 'Backend', 'Full-stack'],
+    f: ['AI & ML', 'Backend', 'Systems'],
     gh: GH + 'VectorAI-v2',
     demo: 'https://vector-ai-one-pi.vercel.app/',
     mt: [['83%', 'forecast accuracy'], ['17%', 'MAPE'], ['2.38', 'MAE, in units'], ['0', 'failed requests in k6 load testing']],
@@ -129,7 +129,7 @@ const PROJ = [
     ds: 'Static analysis engine that parses JavaScript and TypeScript repositories into dependency graphs and computes change impact across large codebases.',
     pf: ['1,400+ files processed', '1,495+ dependency edges', 'BFS + DFS analysis'],
     tg: ['Node.js', 'React', 'Graph algorithms'],
-    f: ['Backend', 'Full-stack'],
+    f: ['Backend', 'Systems'],
     gh: GH + 'StackLens',
     demo: 'https://stack-lens-crbi.vercel.app/',
     mt: [['1,495+', 'dependency edges mapped'], ['1,400+', 'source files processed'], ['O(V+E)', 'cost of each graph traversal'], ['2', 'graph algorithms: BFS and DFS']],
@@ -174,8 +174,8 @@ const PROJ = [
     ft: 1,
     ds: 'AI-powered database schema migration: converts a schema, explains every decision and shows what will break before you run it.',
     pf: ['Team of 5', '3 months', 'Rules + LLM + ML'],
-    tg: ['AI & ML', 'Backend', 'Frontend'],
-    f: ['AI & ML', 'Backend', 'Full-stack', 'Data'],
+    tg: ['AI & ML', 'Backend', 'Systems'],
+    f: ['AI & ML', 'Backend', 'Systems', 'Data'],
     gh: GH,
     mt: [['5', 'team members'], ['3', 'months'], ['9', 'tables in the data model'], ['5', 'pipeline stages: parse, rules, LLM, diff, report']],
     bt: [
@@ -197,7 +197,7 @@ const PROJ = [
     ds: 'Emergency shelter platform connecting evacuees with hosts and administrators through role-based dashboards and moderated listings.',
     pf: ['3 user roles', 'JWT authentication'],
     tg: ['MERN', 'JWT', 'Multer'],
-    f: ['Full-stack', 'Backend'],
+    f: ['Systems', 'Backend'],
     gh: GH + 'SafeStay',
     demo: 'https://safe-stay-v0.vercel.app/',
     mt: [['3', 'user roles: evacuee, host, admin'], ['JWT', 'token-based authentication'], ['Admin', 'moderates listings and users']],
@@ -262,7 +262,7 @@ const PROJ = [
     ds: 'Personal finance dashboard with category analytics, live currency conversion, and careful loading, empty and error states.',
     pf: ['Live FX rates', '5 currencies', 'LocalStorage persistence'],
     tg: ['React', 'Recharts', 'Tailwind'],
-    f: ['Full-stack'],
+    f: ['Systems'],
     gh: GH + 'ExpenseTracker',
     demo: 'https://expensetracker-rosy-eight.vercel.app/',
     mt: [['5', 'currencies: USD, INR, EUR, GBP, AED'], ['2', 'live rate sources'], ['Local', 'data stays in the browser']],
@@ -283,8 +283,8 @@ const PROJ = [
     sub: 'Travel booking ecosystem with a traveller site and an agency admin panel.',
     ds: 'Travel booking ecosystem: tour discovery, validated reservations and an agency admin panel.',
     pf: ['Dual-sided platform', 'PHP + MySQL'],
-    tg: ['PHP', 'MySQL', 'Responsive UI'],
-    f: ['Full-stack', 'Backend'],
+    tg: ['PHP', 'MySQL', 'Backend'],
+    f: ['Systems', 'Backend'],
     gh: GH + 'tour-companion',
     mt: [['2', 'sides: travellers and agency'], ['PHP + MySQL', 'backend'], ['Server-side', 'validation on every booking']],
     bt: [
@@ -374,7 +374,7 @@ const EXP = [
 
 const JR = [
   ['2023', 'Started programming journey · Learned Python · Worked with MySQL · Built logic-building foundations · Learned backend basics'],
-  ['2024', 'Learned MERN Stack · Built RESTful APIs · Started full-stack development · Learned authentication and deployment · Built responsive frontend systems'],
+  ['2024', 'Learned MERN Stack · Built RESTful APIs · Expanded software engineering foundation · Learned authentication and deployment · Built responsive interface systems'],
   ['2025', 'Built production-style projects · Worked on Vector AI and Safe Stay · Participated in Hacktoberfest · Improved async state handling · Explored rate limiting and data extraction systems · Developed stronger product thinking'],
   ['2026', 'Exploring scalable backend systems · Learning system architecture · Improving engineering depth · Building polished projects · Growing through open source and product-focused development · Integrated ML systems into web applications · Learning DevOps and cloud basics for production readiness']
 ];
@@ -390,7 +390,7 @@ const SK = [
 
 const MODES = ['Auto', 'Dawn', 'Day', 'Golden', 'Dusk', 'Night'];
 const HRS = [null, 6.9, 12, 17.9, 19.5, 23];
-const FILTERS = ['All', 'Backend', 'AI & ML', 'Full-stack', 'Data'];
+const FILTERS = ['All', 'Backend', 'AI & ML', 'Systems', 'Data'];
 
 /* =========================== MAIN APP COMPONENT =========================== */
 export default function App() {
@@ -846,19 +846,19 @@ export default function App() {
         {/* ---------- HERO ---------- */}
         <section className="hero" id="top">
           <div className="tl">
-            <span className="mono">Full-stack developer · Web &amp; AI</span>
+            <span className="mono">Software Engineer · Backend &amp; AI</span>
             <h1>Some problems are <span className="em">worth sitting with.</span></h1>
             <p className="sub">Understanding them is where building begins.</p>
           </div>
           <div className="bt">
             <div>
               <p className="lead">
-                Full-stack developer focused on web engineering, backend infrastructure, and AI/ML — building systems that scale without losing their human purpose.
+                Software engineer focused on backend infrastructure, distributed systems, and AI/ML — building systems that scale without losing their human purpose.
               </p>
               <div className="row">
                 <a className="cta" href="#work">Selected work <span>↓</span></a>
                 <span className="avail">Open to opportunities</span>
-                <span className="mono" style={{ opacity: 0.85 }}>React · Node</span>
+                <span className="mono" style={{ opacity: 0.85 }}>Backend · Systems · AI</span>
               </div>
             </div>
             <div className="hero-aside">
@@ -868,7 +868,7 @@ export default function App() {
                 </div>
                 <div className="hp-meta">
                   <b>Aubaid Ahmed</b>
-                  <span className="mono">Full-Stack · Web &amp; AI</span>
+                  <span className="mono">Software Engineer</span>
                 </div>
               </div>
               <div className="wx">
@@ -883,7 +883,7 @@ export default function App() {
         <section className="band" id="about">
           <span className="mono rv">About</span>
           <h2 className="stmt rv">
-            I am a B.Tech IT student graduating in 2028, exploring how technology can solve real-world problems through user-centric solutions with a growing focus on web engineering, backend infrastructure, AI/ML, and systems that scale without losing their human purpose.
+            I am a B.Tech IT student graduating in 2028, exploring how technology can solve real-world problems through user-centric solutions with a growing focus on software engineering, backend infrastructure, AI/ML, and systems that scale without losing their human purpose.
           </h2>
           <div className="how rv">
             <div>
@@ -1078,7 +1078,7 @@ export default function App() {
 
               <span className="mono" style={{ color: 'var(--muted)' }}>Currently exploring</span>
               <h3>Systems that scale</h3>
-              <p>Backend infrastructure · AI / ML · Problem solving · Entrepreneurship · Web engineering · System design</p>
+              <p>Backend infrastructure · AI / ML · Problem solving · Software engineering · Distributed systems · System design</p>
             </div>
           </div>
         </section>
