@@ -861,9 +861,20 @@ export default function App() {
                 <span className="mono" style={{ opacity: 0.85 }}>React · Node</span>
               </div>
             </div>
-            <div className="wx">
-              <span className="mono" id="wxl">{localTimeStr}</span>
-              <b id="wxp">{phaseStr}</b>
+            <div className="hero-aside">
+              <div className="hp-card">
+                <div className="hp-img-box">
+                  <img src="/photo.jpg" alt="Aubaid Ahmed Saiyed" className="hp-img" />
+                </div>
+                <div className="hp-meta">
+                  <b>Aubaid Ahmed</b>
+                  <span className="mono">Full-Stack · Web &amp; AI</span>
+                </div>
+              </div>
+              <div className="wx">
+                <span className="mono" id="wxl">{localTimeStr}</span>
+                <b id="wxp">{phaseStr}</b>
+              </div>
             </div>
           </div>
         </section>

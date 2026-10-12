@@ -40,6 +40,15 @@ h1,h2,h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;margin:0;l
 .hero .wx{justify-self:end;text-align:right;color:var(--hm);display:flex;flex-direction:column;gap:6px}
 .hero .wx b{font:400 28px 'Instrument Serif',serif;color:var(--hi);letter-spacing:-.01em}
 .avail{display:inline-flex;gap:8px;align-items:center;font-size:14px}.avail::before{content:"";width:8px;height:8px;border-radius:50%;background:#58b36b;box-shadow:0 0 0 4px rgba(88,179,107,.2)}
+/* Hero portrait */
+.hero-aside{justify-self:end;display:flex;flex-direction:column;align-items:flex-end;gap:20px}
+.hp-card{position:relative;width:clamp(190px,18vw,260px);background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:9px 9px 14px;box-shadow:0 30px 70px -15px rgba(0,0,0,.4);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
+.hp-card:hover{transform:translateY(-4px);box-shadow:0 40px 90px -20px rgba(0,0,0,.55)}
+.hp-img-box{width:100%;aspect-ratio:3.4/4.2;border-radius:20px;overflow:hidden;background:#1a232e;position:relative}
+.hp-img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.95) contrast(1.04)}
+.hp-meta{display:flex;justify-content:space-between;align-items:center;padding:10px 8px 2px}
+.hp-meta b{font:400 18px/1.2 'Instrument Serif',Georgia,serif;color:var(--text);letter-spacing:-.01em}
+.hp-meta .mono{font-size:10.5px;color:var(--muted);letter-spacing:.08em}
 /* ---------- bands (transparent, atmosphere shows) */
 .band{position:relative;z-index:1;padding:20vh 4vw;color:var(--hi)}
 .band .mono{color:var(--hm)}
@@ -134,6 +143,8 @@ html[data-mode=dark] .flt button.on{background:rgba(255,255,255,.06)}
 
 @media(max-width:1000px){
 .hero .bt{grid-template-columns:1fr}
+.hero-aside{justify-self:start;align-items:flex-start;flex-direction:row;flex-wrap:wrap;gap:24px;margin-top:28px}
+.hp-card{width:min(60vw,240px)}
 .hero .wx{justify-self:start;text-align:left}
 .fig,.how{grid-template-columns:1fr}
 .how.four{grid-template-columns:1fr 1fr}
