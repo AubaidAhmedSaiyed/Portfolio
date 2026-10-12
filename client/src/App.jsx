@@ -242,7 +242,6 @@ const PROJ = [
   {
     id: 'harbor',
     n: 'Harborline',
-    nw: 1,
     sub: 'Container congestion predictor and port operations optimiser, built at the IBM BoB hackathon.',
     img: '/boat-ocean.png',
     ds: 'Container congestion predictor and port operations optimiser for five Indian ports, built for the IBM BoB AI Innovation Hackathon.',
@@ -357,27 +356,14 @@ const EXP = [
     m: []
   },
   {
-    p: '[confirm dates]',
-    isTodoPeriod: true,
+    p: 'Sep 2026',
     t: 'IBM BoB AI Innovation Hackathon: Top 15',
     o: 'Team BugHunters · CHARUSAT × IBM',
     b: [
       'Built Harborline, a port congestion forecasting and optimisation platform, with the team.',
       'Reached the Top 15.'
     ],
-    m: ['Top 15'],
-    flag: 1
-  },
-  {
-    p: '2026',
-    t: 'Amazon ML Challenge: Business Entity Resolution',
-    o: 'Competition · Unstop',
-    b: [
-      'Matched records across three noisy business-data sources.',
-      '__TODO__Add your approach, rank or score.'
-    ],
-    m: [],
-    flag: 1
+    m: ['Top 15']
   }
 ];
 
@@ -931,22 +917,14 @@ export default function App() {
 
           <div id="ex">
             {EXP.map((e, index) => (
-              <div key={index} className={`ex ${e.flag ? 'flag' : ''} rv`}>
-                <div className="pd">
-                  {e.isTodoPeriod ? <span className="todo">{e.p}</span> : e.p}
-                </div>
+              <div key={index} className="ex rv">
+                <div className="pd">{e.p}</div>
                 <div>
                   <h3>{e.t}</h3>
                   <div className="og">{e.o}</div>
                   <ul>
                     {e.b.map((x, bIdx) => (
-                      <li key={bIdx}>
-                        {x.startsWith('__TODO__') ? (
-                          <span className="todo">[{x.replace('__TODO__', '')}]</span>
-                        ) : (
-                          x
-                        )}
-                      </li>
+                      <li key={bIdx}>{x}</li>
                     ))}
                   </ul>
                   {e.m.length > 0 && (
@@ -1002,11 +980,24 @@ export default function App() {
 
               <span className="mono" style={{ color: 'var(--muted)' }}>Working style</span>
               <h3>Analytical, product-minded, collaborative</h3>
-              <p>Analytical · Product thinking · Data-driven · Collaborative · Detail-oriented</p>
+              <div className="chips">
+                <span>Analytical</span>
+                <span>Product Thinking</span>
+                <span>Data-driven</span>
+                <span>Collaborative</span>
+                <span>Detail-oriented</span>
+              </div>
 
               <span className="mono" style={{ color: 'var(--muted)' }}>Currently exploring</span>
               <h3>Systems that scale</h3>
-              <p>Backend infrastructure · AI / ML · Problem solving · Software engineering · Distributed systems · System design</p>
+              <ul className="exp-list">
+                <li>Backend Infrastructure</li>
+                <li>AI / ML Inference</li>
+                <li>Distributed Systems</li>
+                <li>System Design</li>
+                <li>Cloud &amp; DevOps Basics</li>
+                <li>High Availability Services</li>
+              </ul>
             </div>
           </div>
         </section>
@@ -1046,9 +1037,6 @@ export default function App() {
                 <span className="mono" style={{ color: 'var(--muted)' }}>
                   {String(activeModalIdx + 1).padStart(2, '0')} / {String(PROJ.length).padStart(2, '0')}
                 </span>
-                {activeProj.nw ? (
-                  <span className="mono nw"> · New · confirm details</span>
-                ) : null}
                 <h2>{activeProj.n}</h2>
                 <p className="sb">{activeProj.sub}</p>
               </div>
@@ -1075,7 +1063,7 @@ export default function App() {
             <div className="mx">
               {activeProj.mt.map(([val, label], idx) => (
                 <div key={idx}>
-                  <b className={val.startsWith('[') ? 'todo' : ''}>{val}</b>
+                  <b>{val}</b>
                   <span>{label}</span>
                 </div>
               ))}
@@ -1102,9 +1090,7 @@ export default function App() {
             </div>
 
             <div className="ft2">
-              <span className="mono nw">
-                Understanding notes drafted from your project details · edit in your own words
-              </span>
+              <span></span>
               <div className="nv">
                 <a href={activeProj.gh} target="_blank" rel="noreferrer" style={{ color: 'var(--acc)' }}>
                   GitHub ↗

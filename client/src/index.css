@@ -93,12 +93,16 @@ html[data-mode=dark] .flt button.on{background:rgba(255,255,255,.06)}
 .ex h3{font-size:clamp(28px,3vw,42px);line-height:1.05}.ex .og{color:var(--acc);margin:6px 0 12px;font-size:15px}
 .ex ul{margin:0;padding-left:18px;color:var(--muted);max-width:62ch}.ex li{margin:5px 0}
 .ex .ms{display:flex;gap:8px 18px;flex-wrap:wrap;margin-top:14px}.ex .ms b{font-weight:500;font-size:15px;display:flex;gap:8px;align-items:center}.ex .ms b::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--sun)}
-.ex.flag h3::after{content:"Added from our chat · confirm";display:inline-block;margin-left:14px;font:500 10.5px 'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--todo);vertical-align:middle}
 .jr{display:grid;grid-template-columns:200px minmax(0,1fr);gap:4vw;padding:20px 0;border-top:1px solid var(--line)}.jr:last-child{border-bottom:1px solid var(--line)}.jr p{margin:0;color:var(--muted);max-width:70ch}.jr .mono{color:var(--text)}
 .two{display:grid;grid-template-columns:1.3fr 1fr;gap:6vw;margin-top:12vh}
 .sk div{display:grid;grid-template-columns:160px 1fr;gap:20px;padding:16px 0;border-top:1px solid var(--line)}.sk div:last-child{border-bottom:1px solid var(--line)}
 .sk .mono{color:var(--muted);padding-top:4px}.sk p{margin:0;font-size:18px}
 .ed h3{font-size:clamp(26px,2.6vw,38px);line-height:1.1;margin:10px 0 6px}.ed p{margin:0 0 26px;color:var(--muted)}
+.ed .chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 26px}
+.ed .chips span{font:500 13px 'DM Mono',monospace;letter-spacing:.04em;padding:5px 12px;border-radius:99px;border:1px solid var(--line);background:rgba(255,255,255,.08);color:var(--text)}
+.ed .exp-list{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;margin:10px 0 26px;list-style:none;padding:0}
+.ed .exp-list li{font:500 13.5px Inter,sans-serif;color:var(--text);display:flex;align-items:center;gap:8px}
+.ed .exp-list li::before{content:"→";color:var(--acc);font-weight:700}
 /* contact */
 .end{padding:22vh 4vw 6vh;min-height:100vh;display:flex;flex-direction:column;justify-content:space-between}
 .end h2{font-size:clamp(46px,8.4vw,150px);line-height:.94;max-width:12ch}
