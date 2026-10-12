@@ -102,6 +102,7 @@ const PROJ = [
     n: 'Vector AI',
     sub: 'Retail intelligence platform: demand forecasting, inventory optimisation and store operations in one workflow.',
     ft: 1,
+    img: '/projects/vector-ai.png',
     ds: 'Retail intelligence platform that unifies demand forecasting, inventory optimisation and store operations in one workflow.',
     pf: ['83% forecast accuracy', '17% MAPE', 'Zero k6 failures'],
     tg: ['AI & ML', 'Node.js', 'FastAPI'],
@@ -126,6 +127,7 @@ const PROJ = [
     n: 'StackLens',
     sub: 'Static analysis engine: dependency graphs and change impact for JavaScript and TypeScript repositories.',
     ft: 1,
+    img: '/projects/stacklen.png',
     ds: 'Static analysis engine that parses JavaScript and TypeScript repositories into dependency graphs and computes change impact across large codebases.',
     pf: ['1,400+ files processed', '1,495+ dependency edges', 'BFS + DFS analysis'],
     tg: ['Node.js', 'React', 'Graph algorithms'],
@@ -149,6 +151,7 @@ const PROJ = [
     n: 'HEED',
     sub: 'A runtime enforcement layer between an AI agent and its tools.',
     ft: 1,
+    img: '/projects/feedback-flow.png',
     ds: 'A runtime enforcement layer between an AI agent and its tools: every action is allowed, escalated to a human, or blocked before it runs.',
     pf: ['60% vs 40% for static RBAC', '0.108 ms p95 decision', 'ALLOW · ASK · BLOCK'],
     tg: ['AI agents', 'Backend', 'Security'],
@@ -172,6 +175,7 @@ const PROJ = [
     n: 'Pivot',
     sub: 'AI-powered database schema migration: capstone project, team of five.',
     ft: 1,
+    img: '/projects/image.png',
     ds: 'AI-powered database schema migration: converts a schema, explains every decision and shows what will break before you run it.',
     pf: ['Team of 5', '3 months', 'Rules + LLM + ML'],
     tg: ['AI & ML', 'Backend', 'Systems'],
@@ -194,6 +198,7 @@ const PROJ = [
     id: 'safestay',
     n: 'Safe Stay',
     sub: 'Emergency shelter platform linking evacuees, hosts and administrators.',
+    img: '/projects/safe-stay.png',
     ds: 'Emergency shelter platform connecting evacuees with hosts and administrators through role-based dashboards and moderated listings.',
     pf: ['3 user roles', 'JWT authentication'],
     tg: ['MERN', 'JWT', 'Multer'],
@@ -216,6 +221,7 @@ const PROJ = [
     id: 'recon',
     n: 'Transaction Reconciliation Engine',
     sub: 'Backend system that matches user-reported and exchange-exported transactions from CSV.',
+    img: '/projects/image.png',
     ds: 'Backend system that reconciles user-reported and exchange-exported transactions from CSV using configurable, tolerance-based matching.',
     pf: ['Tolerance-based matching', 'Full audit trail'],
     tg: ['Node.js', 'MongoDB', 'REST APIs'],
@@ -238,6 +244,7 @@ const PROJ = [
     n: 'Harborline',
     nw: 1,
     sub: 'Container congestion predictor and port operations optimiser, built at the IBM BoB hackathon.',
+    img: '/boat-ocean.png',
     ds: 'Container congestion predictor and port operations optimiser for five Indian ports, built for the IBM BoB AI Innovation Hackathon.',
     pf: ['Top 15 of 78 teams', '5 Indian ports', 'XGBoost + CP-SAT'],
     tg: ['AI & ML', 'Optimisation', 'Forecasting'],
@@ -259,6 +266,7 @@ const PROJ = [
     id: 'expense',
     n: 'Expense Tracker',
     sub: 'Personal finance dashboard with live currency conversion, built as an internship deliverable.',
+    img: '/projects/expense-tracker.png',
     ds: 'Personal finance dashboard with category analytics, live currency conversion, and careful loading, empty and error states.',
     pf: ['Live FX rates', '5 currencies', 'LocalStorage persistence'],
     tg: ['React', 'Recharts', 'Tailwind'],
@@ -281,6 +289,7 @@ const PROJ = [
     id: 'tour',
     n: 'Tour Companion',
     sub: 'Travel booking ecosystem with a traveller site and an agency admin panel.',
+    img: '/projects/tour-companion.png',
     ds: 'Travel booking ecosystem: tour discovery, validated reservations and an agency admin panel.',
     pf: ['Dual-sided platform', 'PHP + MySQL'],
     tg: ['PHP', 'MySQL', 'Backend'],
@@ -397,13 +406,9 @@ export default function App() {
   const [modeIdx, setModeIdx] = useState(0);
   const [filter, setFilter] = useState('All');
   const [activeModalIdx, setActiveModalIdx] = useState(null);
-  const [customBg, setCustomBg] = useState(null);
   const [localTimeStr, setLocalTimeStr] = useState('');
   const [phaseStr, setPhaseStr] = useState('');
-  const [screenshotMap, setScreenshotMap] = useState({});
 
-  const fileInputRef = useRef(null);
-  const uploadTargetRef = useRef(null);
   const starsRef = useRef([]);
 
   // Time calculations
@@ -627,24 +632,6 @@ export default function App() {
     setPhaseStr(phase(h));
   };
 
-  // Restore stored background and project images
-  useEffect(() => {
-    try {
-      const bg = localStorage.getItem('bgph');
-      if (bg) setCustomBg(bg);
-
-      const map = {};
-      PROJ.forEach((p) => {
-        const key = `ph_a_${p.id}`;
-        const stored = localStorage.getItem(key);
-        if (stored) map[p.id] = stored;
-      });
-      setScreenshotMap(map);
-    } catch (e) {
-      console.error(e);
-    }
-  }, []);
-
   // Update atmosphere on mount, mode change, or resize
   useEffect(() => {
     drawAtmosphere();
@@ -746,73 +733,17 @@ export default function App() {
     }
   }, [activeModalIdx]);
 
-  // File upload logic
-  const handlePhotoUpload = (e) => {
-    const f = e.target.files[0];
-    if (!f) return;
-    const tgt = uploadTargetRef.current;
-    if (!tgt) return;
-
-    const r = new FileReader();
-    r.onload = () => {
-      const im = new Image();
-      im.onload = () => {
-        const mx = tgt === '__bg' ? 2200 : 1600;
-        const k = Math.min(1, mx / Math.max(im.width, im.height));
-        const c = document.createElement('canvas');
-        c.width = im.width * k;
-        c.height = im.height * k;
-        c.getContext('2d').drawImage(im, 0, 0, c.width, c.height);
-        const dataUrl = c.toDataURL('image/jpeg', 0.88);
-
-        if (tgt === '__bg') {
-          try {
-            localStorage.setItem('bgph', dataUrl);
-          } catch (err) {}
-          setCustomBg(dataUrl);
-        } else if (tgt.startsWith('a_')) {
-          const projId = tgt.slice(2);
-          try {
-            localStorage.setItem(`ph_${tgt}`, dataUrl);
-          } catch (err) {}
-          setScreenshotMap((prev) => ({ ...prev, [projId]: dataUrl }));
-        }
-      };
-      im.src = r.result;
-    };
-    r.readAsDataURL(f);
-    e.target.value = '';
-  };
-
-  const toggleCustomBg = () => {
-    if (customBg) {
-      try {
-        localStorage.removeItem('bgph');
-      } catch (err) {}
-      setCustomBg(null);
-    } else {
-      uploadTargetRef.current = '__bg';
-      if (fileInputRef.current) fileInputRef.current.click();
-    }
-  };
-
   const activeProj = activeModalIdx !== null ? PROJ[activeModalIdx] : null;
 
   return (
     <>
       {/* ---------- ATMOSPHERE CANVAS & BACKGROUND ---------- */}
       <div id="atm">
-        <canvas id="sk" style={{ display: customBg ? 'none' : '' }}></canvas>
-        <canvas id="cl" className="cl" style={{ display: customBg ? 'none' : '' }}></canvas>
-        <canvas id="fr" style={{ display: customBg ? 'none' : '' }}></canvas>
-        <canvas id="md_" style={{ display: customBg ? 'none' : '' }}></canvas>
-        <canvas id="nr" style={{ display: customBg ? 'none' : '' }}></canvas>
-        <img
-          id="bgph"
-          src={customBg || ''}
-          alt="Custom atmosphere"
-          style={{ display: customBg ? 'block' : 'none' }}
-        />
+        <canvas id="sk"></canvas>
+        <canvas id="cl" className="cl"></canvas>
+        <canvas id="fr"></canvas>
+        <canvas id="md_"></canvas>
+        <canvas id="nr"></canvas>
         <canvas id="fa"></canvas>
         <canvas id="fb"></canvas>
         <div className="scrim"></div>
@@ -835,9 +766,6 @@ export default function App() {
             onClick={() => setModeIdx((prev) => (prev + 1) % MODES.length)}
           >
             Atmosphere: {MODES[modeIdx]}
-          </button>
-          <button className="pb" id="php" onClick={toggleCustomBg}>
-            {customBg ? 'Remove photo' : 'Use my photo'}
           </button>
         </div>
       </header>
@@ -1134,26 +1062,15 @@ export default function App() {
               </button>
             </div>
 
-            <div
-              className={`ph ${screenshotMap[activeProj.id] ? 'has' : ''}`}
-              data-ph={`a_${activeProj.id}`}
-              onClick={() => {
-                uploadTargetRef.current = `a_${activeProj.id}`;
-                if (fileInputRef.current) fileInputRef.current.click();
-              }}
-            >
-              <img
-                src={screenshotMap[activeProj.id] || ''}
-                alt={activeProj.n}
-                style={{ display: screenshotMap[activeProj.id] ? 'block' : 'none' }}
-              />
-              <div
-                className="hn"
-                style={{ display: screenshotMap[activeProj.id] ? 'none' : 'grid' }}
-              >
-                Add a screenshot <span className="mono">· click to upload</span>
+            {activeProj.img && (
+              <div className="ph has" data-ph={`a_${activeProj.id}`}>
+                <img
+                  src={activeProj.img}
+                  alt={activeProj.n}
+                  style={{ display: 'block' }}
+                />
               </div>
-            </div>
+            )}
 
             <div className="mx">
               {activeProj.mt.map(([val, label], idx) => (
@@ -1216,16 +1133,6 @@ export default function App() {
           </div>
         )}
       </div>
-
-      {/* Hidden file input for uploads */}
-      <input
-        type="file"
-        ref={fileInputRef}
-        id="file"
-        accept="image/*"
-        hidden
-        onChange={handlePhotoUpload}
-      />
     </>
   );
 }

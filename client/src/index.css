@@ -117,12 +117,8 @@ html[data-mode=dark] .flt button.on{background:rgba(255,255,255,.06)}
 .pk .sb{margin:0;color:var(--muted);font-size:16.5px;max-width:62ch;line-height:1.45}
 .pk .x{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);color:var(--text);flex:none;transition:.2s;display:grid;place-content:center}
 .pk .x:hover{border-color:var(--text)}
-.pk .ph{min-height:0;height:96px;margin-top:16px;border-radius:14px;position:relative;overflow:hidden;cursor:pointer;background:linear-gradient(135deg,rgba(120,140,150,.14),rgba(233,184,114,.12));border:1px dashed var(--line)}
-.pk .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}
-.pk .ph.has img{display:block}
-.pk .ph.has{border-style:solid}
-.pk .ph .hn{position:absolute;inset:0;display:grid;place-content:center;text-align:center;color:var(--muted);font-size:14px;padding:16px}
-.pk .ph.has .hn{display:none}
+.pk .ph{min-height:180px;height:clamp(200px,32vh,340px);margin-top:18px;border-radius:18px;position:relative;overflow:hidden;background:#151c24;border:1px solid var(--line);box-shadow:inset 0 0 0 1px rgba(255,255,255,.05)}
+.pk .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block;filter:saturate(.98) contrast(1.02)}
 .pk .mx{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px 24px;margin:18px 0 0;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .pk .mx b{display:block;font:400 clamp(30px,3.4vw,46px)/1 'Instrument Serif',serif;letter-spacing:-.02em}
 .pk .mx span{display:block;font-size:13px;color:var(--muted);line-height:1.35;margin-top:5px}
