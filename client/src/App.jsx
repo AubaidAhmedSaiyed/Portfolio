@@ -347,12 +347,12 @@ const EXP = [
   },
   {
     p: '2025 – Present',
-    t: 'Working towards becoming a software engineer',
-    o: 'Personal & academic projects · Cloud basics · ML integration · Authentication · System thinking',
+    t: 'Software Engineering & Systems Development',
+    o: 'Systems engineering · Distributed backends · ML pipelines · Authentication · Fault tolerance',
     b: [
-      'Designed RESTful APIs with Express and MongoDB.',
-      'Built scalable web apps with JWT and role-based access control.',
-      'Integrated Python ML services with Node.js backends.'
+      'Architected RESTful APIs with Express, FastAPI, and MongoDB/PostgreSQL.',
+      'Built scalable distributed services with JWT, role-based access control, and Redis caching.',
+      'Integrated Python ML inference pipelines with high-throughput backend services.'
     ],
     m: []
   },
@@ -382,10 +382,10 @@ const EXP = [
 ];
 
 const JR = [
-  ['2023', 'Started programming journey · Learned Python · Worked with MySQL · Built logic-building foundations · Learned backend basics'],
-  ['2024', 'Learned MERN Stack · Built RESTful APIs · Expanded software engineering foundation · Learned authentication and deployment · Built responsive interface systems'],
-  ['2025', 'Built production-style projects · Worked on Vector AI and Safe Stay · Participated in Hacktoberfest · Improved async state handling · Explored rate limiting and data extraction systems · Developed stronger product thinking'],
-  ['2026', 'Exploring scalable backend systems · Learning system architecture · Improving engineering depth · Building polished projects · Growing through open source and product-focused development · Integrated ML systems into web applications · Learning DevOps and cloud basics for production readiness']
+  ['2023', 'Started programming journey · Learned Python · Worked with MySQL · Built algorithmic problem-solving foundations · Mastered core computer science basics'],
+  ['2024', 'Built backend systems & RESTful APIs · Expanded software engineering architecture · Implemented authentication, concurrency, and deployments · Engineered clean client-server systems'],
+  ['2025', 'Engineered production-grade systems · Architected Vector AI and Safe Stay · Contributed to open-source software · Optimized asynchronous state handling · Built rate-limiting and robust data ingestion pipelines · Developed disciplined systems design'],
+  ['2026', 'Building distributed backend architectures · Deepening systems design & low-latency services · Advancing through open-source software engineering · Integrating ML models into production backends · Mastering cloud infrastructure and DevOps for high availability']
 ];
 
 const SK = [
