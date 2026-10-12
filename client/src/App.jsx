@@ -157,6 +157,7 @@ const PROJ = [
     tg: ['AI agents', 'Backend', 'Security'],
     f: ['AI & ML', 'Backend'],
     gh: GH,
+    demo: 'https://heed-eight.vercel.app',
     mt: [['60%', 'vs 40% for static RBAC on 50 trajectory scenarios'], ['0.108 ms', 'p95 decision latency'], ['3', 'verdicts: ALLOW, ASK, BLOCK'], ['2', 'modes: OBSERVE and ENFORCE']],
     bt: [
       'RuntimeGateway intercepts every tool call and returns ALLOW, ASK or BLOCK',
